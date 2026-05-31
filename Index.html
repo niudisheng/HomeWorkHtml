@@ -1,0 +1,7092 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixso HTML</title>
+  <link rel="stylesheet" href="css/font.css">
+  <script src="js/animation.js"></script>
+  <script src="js/navigation.js"></script>
+  <style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ol,ul,menu {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+ol li::marker, ul li::before {
+  letter-spacing: 0;
+}
+
+.scroll-container > div {
+  width: 100%;
+}
+
+.container > div {
+  width: 100%;
+}
+
+.Pixso-canvas-0_1 > div {
+  width: 100%;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body { 
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: white;
+}
+    
+span {
+  word-break: break-word;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.fill-背景颜色-20_45 {
+        background-color: rgba(29, 36, 44, 1)
+      }
+.fill-导航栏字体颜色-20_48 {
+        background-color: rgba(73, 76, 82, 1)
+      }
+.stroke-右上角关闭放大窗口图标颜色-20_59 {
+        border-color: rgba(255, 255, 255, 1)
+      }
+.fill-导航栏背景颜色-20_52 {
+        background-color: rgba(34, 41, 50, 1)
+      }
+.fill-导航栏点亮时背景颜色-20_56 {
+        background-color: rgba(236, 105, 153, 1)
+      }
+.fill-导航栏字体颜色-20_48-paragraph {
+        color: rgba(73, 76, 82, 1)
+      }
+.fill-页面标题文本颜色-20_67-paragraph {
+        color: rgba(255, 255, 255, 1)
+      }
+.text-页面内其他文本大小-20_78 {
+        font-size: 30px;
+font-family: "Noto Sans SC-Regular";
+font-weight: Regular
+      }
+.fill-页面标题文本颜色-20_67-text {
+        color: rgba(255, 255, 255, 1)
+      }
+.fill-设置左侧边栏背景颜色-20_61 {
+        background-color: rgba(25, 31, 37, 1)
+      }
+.fill-设置栏目点击时字体颜色-20_64-paragraph {
+        color: rgba(202, 92, 134, 1)
+      }
+.fill-页面内其他文本颜色-20_70-paragraph {
+        color: rgba(116, 121, 128, 1)
+      }
+.text-页面内标题字体大小-20_74 {
+        font-size: 36px;
+font-family: "Source Han Sans CN-Heavy";
+font-weight: Heavy
+      }
+
+.scroll-container {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.Pixso-canvas-0_1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-frame-3_51 {
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  overflow-y: auto;
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-frame-46_203 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_72 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_73 {
+  width: 100%;
+  height: 11.72%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 88.28%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-36_80 {
+  width: 1208px;
+  height: 855px;
+  position: absolute;
+  left: -164px;
+  top: 136px;
+  background-size: 104.6358% 107.9685%;
+  background-position: 0.00px -54.24px;
+  background-repeat: no-repeat;
+  background-image: url(./image/73ce001741a5a7a69daa8baf12d4e11ff3640af2.png);
+}
+
+.Pixso-frame-3_64 {
+  width: 158.48545837402344px;
+  height: 23.999998092651367px;
+  position: absolute;
+  left: 1223px;
+  top: 50px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_83 {
+  width: 15.14%;
+  height: 5px;
+  background-image: url(./image/icon25.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 84.86%;
+  top: 50%;
+  transform: translateY(calc(-50% + 2.5000009536743164px));
+}
+
+.Pixso-vector-79_84 {
+  width: 10.71%;
+  height: 21.9910888671875px;
+  background-image: url(./image/icon24.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.6%;
+  right: -0.31%;
+  top: 50%;
+  transform: translateY(calc(-50% + -0.5146474838256836px));
+}
+
+.Pixso-rectangle-79_87 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_87 {
+  position: absolute;
+  left: 44.8%;
+  top: 50%;
+  right: 40.06%;
+  width: 15.14%;
+  height: 23.999998092651367px;
+  transform: translateY(calc(-50% + 0px));
+}
+
+.stroke-79_87 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 3px 3px 3px 3px;
+  pointer-events: none;
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.Pixso-rectangle-6_26 {
+  width: 547px;
+  height: 904px;
+  position: absolute;
+  left: 893px;
+  top: 120px;
+  background-color: rgba(47, 53, 64, 1);
+}
+
+.Pixso-rectangle-6_27 {
+  width: 181px;
+  height: 77px;
+  position: absolute;
+  left: 954px;
+  top: 50%;
+  transform: translateY(calc(-50% + -337.5px));
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(236, 105, 153, 1);
+}
+
+.Pixso-rectangle-6_29 {
+  width: 181px;
+  height: 77px;
+  position: absolute;
+  left: 1200px;
+  top: 50%;
+  transform: translateY(calc(-50% + -337.5px));
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(59, 64, 75, 1);
+}
+
+.Pixso-paragraph-6_36 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(98, 101, 107, 1);
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 1234px;
+  top: 149px;
+}
+
+.Pixso-paragraph-6_34 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 987px;
+  top: 149px;
+}
+
+.Pixso-group-36_78 {
+  width: 571px;
+  height: 783px;
+  position: absolute;
+  left: 893px;
+  top: 223px;
+}
+
+.Pixso-rectangle-36_39 {
+  width: 571px;
+  height: 783px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/f46582d42aaf93295e8387079342d08a30c48ae4.png);
+}
+
+.Pixso-rectangle-36_77 {
+  width: 83.69017028808594px;
+  height: 25.428958892822266px;
+  position: absolute;
+  left: 487.309814453125px;
+  top: 749.0947265625px;
+  background-color: rgba(19, 15, 6, 0.9399999976158142);
+}
+
+.Pixso-rectangle-36_81 {
+  width: 122px;
+  height: 43px;
+  position: absolute;
+  left: 771px;
+  top: 878px;
+  background-color: rgba(18, 19, 21, 1);
+}
+
+.Pixso-rectangle-36_82 {
+  width: 40px;
+  height: 68px;
+  position: absolute;
+  left: 1066px;
+  top: 52px;
+  background-color: rgba(29, 36, 44, 1);
+}
+
+.Pixso-frame-20_188 {
+  width: 782px;
+  height: 79px;
+  position: absolute;
+  left: 304px;
+  top: 22px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_258 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 0%;
+  right: 79.8%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_259 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 79.8%;
+  right: 0%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_260 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 26.6%;
+  right: 53.2%;
+  top: 2.53%;
+  bottom: 0%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_261 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 53.2%;
+  right: 26.6%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_262 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 2.94%;
+  right: 82.61%;
+  top: 15.19%;
+  bottom: 18.99%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_263 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 29.54%;
+  right: 56.01%;
+  top: 16.46%;
+  bottom: 17.72%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_264 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 56.14%;
+  right: 29.41%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_265 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 82.74%;
+  right: 2.81%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-46_206 {
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  overflow-y: auto;
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-frame-46_207 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_151 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_152 {
+  width: 100%;
+  height: 11.72%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 88.28%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-46_210 {
+  width: 1264px;
+  height: 932px;
+  position: absolute;
+  left: -164px;
+  top: 59px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/73ce001741a5a7a69daa8baf12d4e11ff3640af2.png);
+}
+
+.Pixso-frame-46_211 {
+  width: 158.48545837402344px;
+  height: 23.999998092651367px;
+  position: absolute;
+  left: 1223px;
+  top: 50px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_106 {
+  width: 15.14%;
+  height: 5px;
+  background-image: url(./image/icon23.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 84.86%;
+  top: 50%;
+  transform: translateY(calc(-50% + 2.5000009536743164px));
+}
+
+.Pixso-vector-79_107 {
+  width: 10.71%;
+  height: 21.9910888671875px;
+  background-image: url(./image/icon22.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.6%;
+  right: -0.31%;
+  top: 50%;
+  transform: translateY(calc(-50% + -0.5146474838256836px));
+}
+
+.Pixso-rectangle-79_110 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_110 {
+  position: absolute;
+  left: 44.8%;
+  top: 50%;
+  right: 40.06%;
+  width: 15.14%;
+  height: 23.999998092651367px;
+  transform: translateY(calc(-50% + 0px));
+}
+
+.stroke-79_110 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 3px 3px 3px 3px;
+  pointer-events: none;
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.Pixso-rectangle-46_217 {
+  width: 547px;
+  height: 904px;
+  position: absolute;
+  left: 893px;
+  top: 120px;
+  background-color: rgba(47, 53, 64, 1);
+}
+
+.Pixso-rectangle-46_218 {
+  width: 181px;
+  height: 77px;
+  position: absolute;
+  left: 954px;
+  top: 50%;
+  transform: translateY(calc(-50% + -337.5px));
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(236, 105, 153, 1);
+}
+
+.Pixso-rectangle-46_219 {
+  width: 181px;
+  height: 77px;
+  position: absolute;
+  left: 1200px;
+  top: 50%;
+  transform: translateY(calc(-50% + -337.5px));
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(59, 64, 75, 1);
+}
+
+.Pixso-paragraph-46_220 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(98, 101, 107, 1);
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 1234px;
+  top: 149px;
+}
+
+.Pixso-paragraph-46_221 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 987px;
+  top: 149px;
+}
+
+.Pixso-group-46_222 {
+  width: 571px;
+  height: 783px;
+  position: absolute;
+  left: 893px;
+  top: 223px;
+}
+
+.Pixso-rectangle-46_223 {
+  width: 571px;
+  height: 783px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/f46582d42aaf93295e8387079342d08a30c48ae4.png);
+}
+
+.Pixso-rectangle-46_224 {
+  width: 83.69017028808594px;
+  height: 25.428958892822266px;
+  position: absolute;
+  left: 487.309814453125px;
+  top: 749.0947265625px;
+  background-color: rgba(19, 15, 6, 0.9399999976158142);
+}
+
+.Pixso-rectangle-46_225 {
+  width: 122px;
+  height: 43px;
+  position: absolute;
+  left: 771px;
+  top: 878px;
+  background-color: rgba(18, 19, 21, 1);
+}
+
+.Pixso-rectangle-46_226 {
+  width: 40px;
+  height: 68px;
+  position: absolute;
+  left: 1066px;
+  top: 52px;
+  background-color: rgba(29, 36, 44, 1);
+}
+
+.Pixso-frame-46_227 {
+  width: 782px;
+  height: 79px;
+  position: absolute;
+  left: 304px;
+  top: 22px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_218 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 0%;
+  right: 79.8%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_219 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 79.8%;
+  right: 0%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_220 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 26.6%;
+  right: 53.2%;
+  top: 2.53%;
+  bottom: 0%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_221 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 53.2%;
+  right: 26.6%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_222 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 2.94%;
+  right: 82.61%;
+  top: 15.19%;
+  bottom: 18.99%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_223 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 29.54%;
+  right: 56.01%;
+  top: 16.46%;
+  bottom: 17.72%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_224 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 56.14%;
+  right: 29.41%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_225 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 82.74%;
+  right: 2.81%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-46_238 {
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  overflow-y: auto;
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-frame-46_239 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_123 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_124 {
+  width: 100%;
+  height: 11.72%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 88.28%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-46_242 {
+  width: 1264px;
+  height: 932px;
+  position: absolute;
+  left: -164px;
+  top: 59px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/73ce001741a5a7a69daa8baf12d4e11ff3640af2.png);
+}
+
+.Pixso-frame-46_243 {
+  width: 158.48545837402344px;
+  height: 23.999998092651367px;
+  position: absolute;
+  left: 1223px;
+  top: 50px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_60 {
+  width: 15.14%;
+  height: 5px;
+  background-image: url(./image/icon21.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 84.86%;
+  top: 50%;
+  transform: translateY(calc(-50% + 2.5000009536743164px));
+}
+
+.Pixso-vector-79_61 {
+  width: 10.71%;
+  height: 21.9910888671875px;
+  background-image: url(./image/icon20.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.6%;
+  right: -0.31%;
+  top: 50%;
+  transform: translateY(calc(-50% + -0.5146474838256836px));
+}
+
+.Pixso-rectangle-79_64 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_64 {
+  position: absolute;
+  left: 44.8%;
+  top: 50%;
+  right: 40.06%;
+  width: 15.14%;
+  height: 23.999998092651367px;
+  transform: translateY(calc(-50% + 0px));
+}
+
+.stroke-79_64 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 3px 3px 3px 3px;
+  pointer-events: none;
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.Pixso-rectangle-46_249 {
+  width: 547px;
+  height: 904px;
+  position: absolute;
+  left: 893px;
+  top: 120px;
+  background-color: rgba(47, 53, 64, 1);
+}
+
+.Pixso-rectangle-46_250 {
+  width: 181px;
+  height: 77px;
+  position: absolute;
+  left: 954px;
+  top: 50%;
+  transform: translateY(calc(-50% + -337.5px));
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(236, 105, 153, 1);
+}
+
+.Pixso-rectangle-46_251 {
+  width: 181px;
+  height: 77px;
+  position: absolute;
+  left: 1200px;
+  top: 50%;
+  transform: translateY(calc(-50% + -337.5px));
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(59, 64, 75, 1);
+}
+
+.Pixso-paragraph-46_252 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(98, 101, 107, 1);
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 1234px;
+  top: 149px;
+}
+
+.Pixso-paragraph-46_253 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 987px;
+  top: 149px;
+}
+
+.Pixso-group-46_254 {
+  width: 571px;
+  height: 783px;
+  position: absolute;
+  left: 893px;
+  top: 223px;
+}
+
+.Pixso-rectangle-46_255 {
+  width: 571px;
+  height: 783px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/f46582d42aaf93295e8387079342d08a30c48ae4.png);
+}
+
+.Pixso-rectangle-46_256 {
+  width: 83.69017028808594px;
+  height: 25.428958892822266px;
+  position: absolute;
+  left: 487.309814453125px;
+  top: 749.0947265625px;
+  background-color: rgba(19, 15, 6, 0.9399999976158142);
+}
+
+.Pixso-rectangle-46_257 {
+  width: 122px;
+  height: 43px;
+  position: absolute;
+  left: 771px;
+  top: 878px;
+  background-color: rgba(18, 19, 21, 1);
+}
+
+.Pixso-rectangle-46_258 {
+  width: 40px;
+  height: 68px;
+  position: absolute;
+  left: 1066px;
+  top: 52px;
+  background-color: rgba(29, 36, 44, 1);
+}
+
+.Pixso-frame-46_259 {
+  width: 782px;
+  height: 79px;
+  position: absolute;
+  left: 304px;
+  top: 22px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_52 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 0%;
+  right: 79.8%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_53 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 79.8%;
+  right: 0%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_54 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 26.6%;
+  right: 53.2%;
+  top: 2.53%;
+  bottom: 0%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_55 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 53.2%;
+  right: 26.6%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_56 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 2.94%;
+  right: 82.61%;
+  top: 15.19%;
+  bottom: 18.99%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_57 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 29.54%;
+  right: 56.01%;
+  top: 16.46%;
+  bottom: 17.72%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_58 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 56.14%;
+  right: 29.41%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_59 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 82.74%;
+  right: 2.81%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-3_65 {
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  overflow-y: auto;
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-group-3_66 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-rectangle-3_67 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-rectangle-3_68 {
+  width: 1440px;
+  height: 120px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-frame-3_69 {
+  width: 564px;
+  height: 347px;
+  overflow: hidden;
+  position: absolute;
+  left: 44px;
+  top: 155px;
+}
+
+.Pixso-rectangle-3_70 {
+  width: 564px;
+  height: 347px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(34, 41, 50, 1);
+}
+
+.Pixso-rectangle-3_71 {
+  width: 267px;
+  height: 414px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/96aca45c5b535465c484c4e93df784dc713bea9a.png);
+}
+
+.Pixso-paragraph-3_72 {
+  font-size: 24px;
+  font-family: "Source Han Sans CN-Regular";
+  font-weight: 400;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(143, 148, 154, 1);
+  width: 101px;
+  height: 23px;
+  position: absolute;
+  left: 306px;
+  top: 18px;
+}
+
+.Pixso-paragraph-3_73 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Regular";
+  font-weight: 400;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  width: 113px;
+  height: 56px;
+  position: absolute;
+  left: 417px;
+  top: 0px;
+}
+
+.Pixso-rectangle-46_404 {
+  width: 246px;
+  height: 132px;
+  position: absolute;
+  left: 284px;
+  top: 201px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(196, 196, 196, 1);
+}
+
+.Pixso-paragraph-46_405 {
+  font-size: 14px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 332px;
+  top: 281px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-3_74 {
+  width: 1319px;
+  height: 443px;
+  position: absolute;
+  left: 61px;
+  top: 542px;
+}
+
+.Pixso-rectangle-3_75 {
+  width: 1319px;
+  height: 443px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(34, 41, 50, 1);
+}
+
+.Pixso-paragraph-3_76 {
+  font-size: 36px;
+  font-family: "Source Han Sans CN-Regular";
+  font-weight: 400;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  width: 174px;
+  height: 68px;
+  position: absolute;
+  left: 1px;
+  top: 0px;
+}
+
+.Pixso-rectangle-3_77 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/5e44a2f655b02cee4883bda75c7ab84d4fa5ca31.png);
+}
+
+.stroke-wrapper-3_77 {
+  position: absolute;
+  left: 43px;
+  top: 86px;
+  width: 222px;
+  height: 333px;
+}
+
+.stroke-3_77 {
+  position: absolute;
+  inset: -1px -1px -1px -1px;
+  border-radius: 6px 6px 6px 6px;
+  pointer-events: none;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-rectangle-3_78 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/b63ab57ba457a26a735a16a3bce3e3e646c6ff80.png);
+}
+
+.stroke-wrapper-3_78 {
+  position: absolute;
+  left: 302px;
+  top: 86px;
+  width: 222px;
+  height: 333px;
+}
+
+.stroke-3_78 {
+  position: absolute;
+  inset: -1px -1px -1px -1px;
+  border-radius: 6px 6px 6px 6px;
+  pointer-events: none;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-frame-3_79 {
+  width: 564px;
+  height: 347px;
+  overflow: hidden;
+  position: absolute;
+  left: 677px;
+  top: 155px;
+  overflow-y: auto;
+}
+
+.Pixso-rectangle-3_80 {
+  width: 564px;
+  height: 347px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(34, 41, 50, 1);
+}
+
+.Pixso-paragraph-3_81 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(116, 122, 130, 1);
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 23px;
+  top: 18px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-vector-50_238 {
+  width: 2.32%;
+  height: 23.54088592529297px;
+  background-image: url(./image/icon1.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.16%;
+  right: 8.52%;
+  top: 50%;
+  transform: translateY(calc(-50% + -134.36517000198364px));
+}
+
+.Pixso-frame-50_285 {
+  width: 531px;
+  height: 64px;
+  position: absolute;
+  left: 23px;
+  top: 83px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_153 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(196, 196, 196, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_154 {
+  width: 6.78%;
+  height: 56.24%;
+  position: absolute;
+  left: 3.95%;
+  right: 89.27%;
+  top: 21.88%;
+  bottom: 21.88%;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/c9a9268d8db658a39fb4b051f8a6a2bd05b500c9.png);
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_155 {
+  font-size: 14px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  width: 32.77%;
+  height: 51.56%;
+  position: absolute;
+  left: 13.37%;
+  right: 53.86%;
+  top: 23.44%;
+  bottom: 25%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_156 {
+  width: 4.52%;
+  height: 37.5%;
+  background-image: url(./image/Frame_79_156.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 79.85%;
+  right: 15.63%;
+  top: 31.25%;
+  bottom: 31.25%;
+}
+
+.Pixso-rectangle-79_163 {
+  width: 11.3%;
+  height: 37.5%;
+  position: absolute;
+  left: 86.44%;
+  right: 2.26%;
+  top: 31.25%;
+  bottom: 31.25%;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(142, 142, 142, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_164 {
+  width: 4.52%;
+  height: 37.5%;
+  position: absolute;
+  left: 86.44%;
+  right: 9.04%;
+  top: 31.25%;
+  bottom: 31.25%;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(234, 234, 234, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-50_298 {
+  width: 531px;
+  height: 64px;
+  position: absolute;
+  left: 23px;
+  top: 170px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_111 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(196, 196, 196, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_112 {
+  width: 6.78%;
+  height: 56.24%;
+  position: absolute;
+  left: 3.95%;
+  right: 89.27%;
+  top: 21.88%;
+  bottom: 21.88%;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/c9a9268d8db658a39fb4b051f8a6a2bd05b500c9.png);
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_113 {
+  font-size: 14px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  width: 32.77%;
+  height: 51.56%;
+  position: absolute;
+  left: 13.37%;
+  right: 53.86%;
+  top: 23.44%;
+  bottom: 25%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_114 {
+  width: 4.52%;
+  height: 37.5%;
+  background-image: url(./image/Frame_79_114.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 79.85%;
+  right: 15.63%;
+  top: 31.25%;
+  bottom: 31.25%;
+}
+
+.Pixso-rectangle-79_121 {
+  width: 11.3%;
+  height: 37.5%;
+  position: absolute;
+  left: 86.44%;
+  right: 2.26%;
+  top: 31.25%;
+  bottom: 31.25%;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(10, 194, 0, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_122 {
+  width: 4.52%;
+  height: 37.5%;
+  position: absolute;
+  left: 93.22%;
+  right: 2.26%;
+  top: 31.25%;
+  bottom: 31.25%;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(234, 234, 234, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-group-3_82 {
+  width: 782px;
+  height: 77px;
+  position: absolute;
+  left: 284px;
+  top: 21px;
+}
+
+.Pixso-rectangle-3_83 {
+  width: 158px;
+  height: 77px;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(calc(-50% + 0px));
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+
+.Pixso-rectangle-3_84 {
+  width: 158px;
+  height: 77px;
+  position: absolute;
+  left: 208px;
+  top: 50%;
+  transform: translateY(calc(-50% + 0px));
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+
+.Pixso-rectangle-3_85 {
+  width: 158px;
+  height: 77px;
+  position: absolute;
+  left: 416px;
+  top: 50%;
+  transform: translateY(calc(-50% + 0px));
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+
+.Pixso-rectangle-3_86 {
+  width: 158px;
+  height: 77px;
+  position: absolute;
+  left: 624px;
+  top: 50%;
+  transform: translateY(calc(-50% + 0px));
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+
+.Pixso-paragraph-3_87 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 23px;
+  top: 12px;
+}
+
+.Pixso-paragraph-3_88 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 231px;
+  top: 13px;
+}
+
+.Pixso-paragraph-3_89 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 439px;
+  top: 15px;
+}
+
+.Pixso-paragraph-3_90 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 647px;
+  top: 15px;
+}
+
+.Pixso-symbol-3_91 {
+  width: 158.48545837402344px;
+  height: 23.999998092651367px;
+  position: absolute;
+  left: 1223px;
+  top: 50px;
+}
+
+.Pixso-vector-3_92 {
+  width: 15.14%;
+  height: 5px;
+  background-image: url(./image/icon0.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 84.86%;
+  top: 50%;
+  transform: translateY(calc(-50% + 2.5000009536743164px));
+}
+
+.Pixso-vector-3_93 {
+  width: 10.71%;
+  height: 21.99114990234375px;
+  background-image: url(./image/icon.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.6%;
+  right: -0.31%;
+  top: 50%;
+  transform: translateY(calc(-50% + -0.5146474838256836px));
+}
+
+.Pixso-rectangle-3_96 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.stroke-wrapper-3_96 {
+  position: absolute;
+  left: 44.8%;
+  top: 50%;
+  right: 40.06%;
+  width: 15.14%;
+  height: 23.999998092651367px;
+  transform: translateY(calc(-50% + 0px));
+}
+
+.stroke-3_96 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 3px 3px 3px 3px;
+  pointer-events: none;
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.Pixso-frame-6_42 {
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  overflow-y: auto;
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.Pixso-group-6_43 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-rectangle-6_44 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-rectangle-6_45 {
+  width: 1440px;
+  height: 120px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-group-6_46 {
+  width: 782px;
+  height: 77px;
+  position: absolute;
+  left: 284px;
+  top: 21px;
+}
+
+.Pixso-rectangle-6_47 {
+  width: 158px;
+  height: 77px;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(calc(-50% + 0px));
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(34, 41, 50, 1);
+}
+
+.Pixso-rectangle-6_48 {
+  width: 158px;
+  height: 77px;
+  position: absolute;
+  left: 208px;
+  top: 50%;
+  transform: translateY(calc(-50% + 0px));
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(236, 105, 153, 1);
+}
+
+.Pixso-rectangle-6_49 {
+  width: 158px;
+  height: 77px;
+  position: absolute;
+  left: 416px;
+  top: 50%;
+  transform: translateY(calc(-50% + 0px));
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(34, 41, 50, 1);
+}
+
+.Pixso-rectangle-6_50 {
+  width: 158px;
+  height: 77px;
+  position: absolute;
+  left: 624px;
+  top: 50%;
+  transform: translateY(calc(-50% + 0px));
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  background-color: rgba(34, 41, 50, 1);
+}
+
+.Pixso-paragraph-6_51 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(70, 77, 85, 1);
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 23px;
+  top: 12px;
+}
+
+.Pixso-paragraph-6_52 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(70, 77, 85, 1);
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 231px;
+  top: 13px;
+}
+
+.Pixso-paragraph-6_53 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(70, 77, 85, 1);
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 439px;
+  top: 15px;
+}
+
+.Pixso-paragraph-6_54 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(70, 77, 85, 1);
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 647px;
+  top: 15px;
+}
+
+.Pixso-frame-6_55 {
+  width: 158.48545837402344px;
+  height: 23.999998092651367px;
+  position: absolute;
+  left: 1223px;
+  top: 50px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_231 {
+  width: 15.14%;
+  height: 5px;
+  background-image: url(./image/icon19.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 84.86%;
+  top: 50%;
+  transform: translateY(calc(-50% + 2.5000009536743164px));
+}
+
+.Pixso-vector-79_232 {
+  width: 10.71%;
+  height: 21.9910888671875px;
+  background-image: url(./image/icon18.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.6%;
+  right: -0.31%;
+  top: 50%;
+  transform: translateY(calc(-50% + -0.5146474838256836px));
+}
+
+.Pixso-rectangle-79_235 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_235 {
+  position: absolute;
+  left: 44.8%;
+  top: 50%;
+  right: 40.06%;
+  width: 15.14%;
+  height: 23.999998092651367px;
+  transform: translateY(calc(-50% + 0px));
+}
+
+.stroke-79_235 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 3px 3px 3px 3px;
+  pointer-events: none;
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.Pixso-rectangle-6_56 {
+  width: 547px;
+  height: 904px;
+  position: absolute;
+  left: 893px;
+  top: 120px;
+  background-color: rgba(47, 53, 64, 1);
+}
+
+.Pixso-rectangle-6_57 {
+  width: 181px;
+  height: 77px;
+  position: absolute;
+  left: 1200px;
+  top: 50%;
+  transform: translateY(calc(-50% + -337.5px));
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(236, 105, 153, 1);
+}
+
+.Pixso-rectangle-6_58 {
+  width: 181px;
+  height: 77px;
+  position: absolute;
+  left: 954px;
+  top: 50%;
+  transform: translateY(calc(-50% + -337.5px));
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(148, 148, 148, 1);
+}
+
+.Pixso-paragraph-6_59 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 1234px;
+  top: 149px;
+}
+
+.Pixso-paragraph-6_60 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(98, 101, 107, 1);
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 987px;
+  top: 149px;
+}
+
+.Pixso-rectangle-6_102 {
+  width: 364px;
+  height: 411px;
+  position: absolute;
+  left: 983px;
+  top: 321px;
+  border-radius: 54px 54px 54px 54px;
+  background-color: rgba(165, 165, 165, 1);
+}
+
+.Pixso-frame-6_97 {
+  width: 14.65%;
+  height: 20.61%;
+  position: absolute;
+  left: 73.68%;
+  right: 11.67%;
+  top: 41.11%;
+  bottom: 38.28%;
+  background-color: transparent;
+}
+
+.Pixso-group-6_98 {
+  width: 211px;
+  height: 211px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-vector-6_99 {
+  width: 100%;
+  height: 100%;
+  background-image: url(./image/Oval.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
+
+.Pixso-vector-6_100 {
+  width: 117.22216796875px;
+  height: 117.22216796875px;
+  background-image: url(./image/eadd.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 46.88888931274414px;
+  top: 46.88888931274414px;
+}
+
+.Pixso-paragraph-6_103 {
+  font-size: 18px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(68, 68, 68, 1);
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 1010px;
+  top: 754px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-17_31 {
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-symbol-46_202 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-rectangle-46_200 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
+
+.Pixso-rectangle-46_201 {
+  width: 100%;
+  height: 11.72%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 88.28%;
+}
+
+.Pixso-rectangle-57_266 {
+  width: 1417px;
+  height: 674px;
+  position: absolute;
+  left: -5px;
+  top: 107px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/931f439ca10b232365e94ec9bfdf1be1bcb92fe2.png);
+}
+
+.Pixso-group-17_33 {
+  width: 782px;
+  height: 79px;
+  position: absolute;
+  left: 287px;
+  top: 28px;
+}
+
+.Pixso-rectangle-17_34 {
+  width: 158px;
+  height: 77px;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(calc(-50% + -1px));
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+
+.Pixso-rectangle-17_43 {
+  width: 158px;
+  height: 77px;
+  position: absolute;
+  left: 416px;
+  top: 50%;
+  transform: translateY(calc(-50% + 1px));
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+
+.Pixso-rectangle-17_36 {
+  width: 158px;
+  height: 77px;
+  position: absolute;
+  left: 208px;
+  top: 50%;
+  transform: translateY(calc(-50% + 1px));
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+
+.Pixso-rectangle-17_37 {
+  width: 158px;
+  height: 77px;
+  position: absolute;
+  left: 624px;
+  top: 50%;
+  transform: translateY(calc(-50% + -1px));
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+
+.Pixso-paragraph-17_38 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 23px;
+  top: 12px;
+}
+
+.Pixso-paragraph-17_39 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 231px;
+  top: 13px;
+}
+
+.Pixso-paragraph-17_40 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 439px;
+  top: 15px;
+}
+
+.Pixso-paragraph-17_41 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 647px;
+  top: 15px;
+}
+
+.Pixso-frame-17_50 {
+  width: 158.48545837402344px;
+  height: 23.999998092651367px;
+  position: absolute;
+  left: 1223px;
+  top: 50px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_226 {
+  width: 15.14%;
+  height: 5px;
+  background-image: url(./image/icon17.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 84.86%;
+  top: 50%;
+  transform: translateY(calc(-50% + 2.5000009536743164px));
+}
+
+.Pixso-vector-79_227 {
+  width: 10.71%;
+  height: 21.9912109375px;
+  background-image: url(./image/icon16.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.6%;
+  right: -0.31%;
+  top: 50%;
+  transform: translateY(calc(-50% + -0.5146474838256836px));
+}
+
+.Pixso-rectangle-79_230 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_230 {
+  position: absolute;
+  left: 44.8%;
+  top: 50%;
+  right: 40.06%;
+  width: 15.14%;
+  height: 23.999998092651367px;
+  transform: translateY(calc(-50% + 0px));
+}
+
+.stroke-79_230 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 3px 3px 3px 3px;
+  pointer-events: none;
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.Pixso-symbol-21_46 {
+  width: 100%;
+  height: 333px;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 15px 15px 15px 15px;
+}
+
+.Pixso-rectangle-19_39 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/b63ab57ba457a26a735a16a3bce3e3e646c6ff80.png);
+}
+
+.stroke-wrapper-19_39 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 222px;
+  height: 333px;
+}
+
+.stroke-19_39 {
+  position: absolute;
+  inset: -1px -1px -1px -1px;
+  border-radius: 6px 6px 6px 6px;
+  pointer-events: none;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-paragraph-38_47 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: 126px;
+  height: 48px;
+  position: absolute;
+  left: 13px;
+  top: 275px;
+}
+
+.Pixso-group-45_47 {
+  width: 102px;
+  height: 46px;
+  position: absolute;
+  left: 139px;
+  top: 287px;
+}
+
+.Pixso-rectangle-21_45 {
+  width: 83px;
+  height: 46px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(236, 105, 153, 1);
+}
+
+.Pixso-paragraph-21_40 {
+  width: 102px;
+  height: 42px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-vector-38_48 {
+  width: 26.08%;
+  height: 52.17%;
+  background-image: url(./image/Frame_38_48.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 61.96%;
+  right: 11.96%;
+  top: 26.09%;
+  bottom: 21.74%;
+}
+
+.Pixso-frame-45_121 {
+  width: 100%;
+  height: 333px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 15px 15px 15px 15px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_74 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/cdff539179355961e0ece21f9b1945cdebd29ec9.png);
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_74 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 222px;
+  height: 333px;
+}
+
+.stroke-79_74 {
+  position: absolute;
+  inset: -1px -1px -1px -1px;
+  border-radius: 6px 6px 6px 6px;
+  pointer-events: none;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-paragraph-79_75 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 126px;
+  height: 48px;
+  position: absolute;
+  left: 13px;
+  top: 275px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-group-79_76 {
+  width: 102px;
+  height: 46px;
+  position: absolute;
+  left: 139px;
+  top: 287px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_77 {
+  width: 83px;
+  height: 46px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(236, 105, 153, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_78 {
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 102px;
+  height: 42px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_79 {
+  width: 26.08%;
+  height: 52.17%;
+  background-image: url(./image/Frame_79_79.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 61.96%;
+  right: 11.96%;
+  top: 26.09%;
+  bottom: 21.74%;
+}
+
+.Pixso-frame-45_58 {
+  width: 100%;
+  height: 333px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 15px 15px 15px 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/81988ef7482731b302b5ed3e726e9a5fd2f9bf22.png);
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_209 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/81988ef7482731b302b5ed3e726e9a5fd2f9bf22.png);
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_209 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 222px;
+  height: 333px;
+}
+
+.stroke-79_209 {
+  position: absolute;
+  inset: -1px -1px -1px -1px;
+  border-radius: 6px 6px 6px 6px;
+  pointer-events: none;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-paragraph-79_210 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 126px;
+  height: 48px;
+  position: absolute;
+  left: 13px;
+  top: 275px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-group-79_211 {
+  width: 102px;
+  height: 46px;
+  position: absolute;
+  left: 139px;
+  top: 287px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_212 {
+  width: 83px;
+  height: 46px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(236, 105, 153, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_213 {
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 102px;
+  height: 42px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_214 {
+  width: 26.08%;
+  height: 52.17%;
+  background-image: url(./image/Frame_79_214.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 61.96%;
+  right: 11.96%;
+  top: 26.09%;
+  bottom: 21.74%;
+}
+
+.Pixso-frame-45_91 {
+  width: 100%;
+  height: 333px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 15px 15px 15px 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/81988ef7482731b302b5ed3e726e9a5fd2f9bf22.png);
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_88 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/77798c7721c5d450a7939c98f648b5425fb0c2b3.png);
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_88 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 222px;
+  height: 333px;
+}
+
+.stroke-79_88 {
+  position: absolute;
+  inset: -1px -1px -1px -1px;
+  border-radius: 6px 6px 6px 6px;
+  pointer-events: none;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-paragraph-79_89 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 126px;
+  height: 48px;
+  position: absolute;
+  left: 13px;
+  top: 275px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-group-79_90 {
+  width: 102px;
+  height: 46px;
+  position: absolute;
+  left: 139px;
+  top: 287px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_91 {
+  width: 83px;
+  height: 46px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(236, 105, 153, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_92 {
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 102px;
+  height: 42px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_93 {
+  width: 26.08%;
+  height: 52.17%;
+  background-image: url(./image/Frame_79_93.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 61.96%;
+  right: 11.96%;
+  top: 26.09%;
+  bottom: 21.74%;
+}
+
+.Pixso-frame-45_101 {
+  width: 100%;
+  height: 333px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 15px 15px 15px 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/81988ef7482731b302b5ed3e726e9a5fd2f9bf22.png);
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_125 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/589e8864195a32d230998b9504b0b23b21a91bf2.png);
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_125 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 222px;
+  height: 333px;
+}
+
+.stroke-79_125 {
+  position: absolute;
+  inset: -1px -1px -1px -1px;
+  border-radius: 6px 6px 6px 6px;
+  pointer-events: none;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-paragraph-79_126 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 126px;
+  height: 48px;
+  position: absolute;
+  left: 13px;
+  top: 275px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-group-79_127 {
+  width: 102px;
+  height: 46px;
+  position: absolute;
+  left: 139px;
+  top: 287px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_128 {
+  width: 83px;
+  height: 46px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(236, 105, 153, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_129 {
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 102px;
+  height: 42px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_130 {
+  width: 26.08%;
+  height: 52.17%;
+  background-image: url(./image/Frame_79_130.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 61.96%;
+  right: 11.96%;
+  top: 26.09%;
+  bottom: 21.74%;
+}
+
+.Pixso-frame-45_111 {
+  width: 100%;
+  height: 333px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 15px 15px 15px 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/81988ef7482731b302b5ed3e726e9a5fd2f9bf22.png);
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_173 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/59bf66d278807805bff42b28e480ddf7e58fb673.png);
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_173 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 222px;
+  height: 333px;
+}
+
+.stroke-79_173 {
+  position: absolute;
+  inset: -1px -1px -1px -1px;
+  border-radius: 6px 6px 6px 6px;
+  pointer-events: none;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-text-79_174 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: Regular;
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 126px;
+  height: 48px;
+  position: absolute;
+  left: 13px;
+  top: 275px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_174_0 {
+  line-height: 30.40799903869629px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-79_174_0_1 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-paragraph-79_174_1 {
+  line-height: 30.40799903869629px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-79_174_1_1 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-group-79_175 {
+  width: 102px;
+  height: 46px;
+  position: absolute;
+  left: 139px;
+  top: 287px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_176 {
+  width: 83px;
+  height: 46px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(236, 105, 153, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_177 {
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 102px;
+  height: 42px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_178 {
+  width: 26.08%;
+  height: 52.17%;
+  background-image: url(./image/Frame_79_178.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 61.96%;
+  right: 11.96%;
+  top: 26.09%;
+  bottom: 21.74%;
+}
+
+.Pixso-frame-45_131 {
+  width: 100%;
+  height: 333px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 15px 15px 15px 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/81988ef7482731b302b5ed3e726e9a5fd2f9bf22.png);
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_241 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/dc71d8a36ea2b6691b4d8803bd6cafc73127cac5.png);
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_241 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 222px;
+  height: 333px;
+}
+
+.stroke-79_241 {
+  position: absolute;
+  inset: -1px -1px -1px -1px;
+  border-radius: 6px 6px 6px 6px;
+  pointer-events: none;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-paragraph-79_242 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 126px;
+  height: 48px;
+  position: absolute;
+  left: 13px;
+  top: 275px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-group-79_243 {
+  width: 102px;
+  height: 46px;
+  position: absolute;
+  left: 139px;
+  top: 287px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_244 {
+  width: 83px;
+  height: 46px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(236, 105, 153, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_245 {
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 102px;
+  height: 42px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_246 {
+  width: 26.08%;
+  height: 52.17%;
+  background-image: url(./image/Frame_79_246.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 61.96%;
+  right: 11.96%;
+  top: 26.09%;
+  bottom: 21.74%;
+}
+
+.Pixso-frame-45_141 {
+  width: 100%;
+  height: 333px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 15px 15px 15px 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/81988ef7482731b302b5ed3e726e9a5fd2f9bf22.png);
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_198 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/e8d3b04df38bbb2ac5d645f152e3a070d6c0cd08.png);
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_198 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 222px;
+  height: 333px;
+}
+
+.stroke-79_198 {
+  position: absolute;
+  inset: -1px -1px -1px -1px;
+  border-radius: 6px 6px 6px 6px;
+  pointer-events: none;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-paragraph-79_199 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 126px;
+  height: 48px;
+  position: absolute;
+  left: 13px;
+  top: 275px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-group-79_200 {
+  width: 102px;
+  height: 46px;
+  position: absolute;
+  left: 139px;
+  top: 287px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_201 {
+  width: 83px;
+  height: 46px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(236, 105, 153, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_202 {
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 102px;
+  height: 42px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_203 {
+  width: 26.08%;
+  height: 52.17%;
+  background-image: url(./image/Frame_79_203.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 61.96%;
+  right: 11.96%;
+  top: 26.09%;
+  bottom: 21.74%;
+}
+
+.Pixso-frame-45_151 {
+  width: 100%;
+  height: 333px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 15px 15px 15px 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/81988ef7482731b302b5ed3e726e9a5fd2f9bf22.png);
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_97 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/f7251ea0a4ee3d107dfe9dbcb011247c116f396c.png);
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_97 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 222px;
+  height: 333px;
+}
+
+.stroke-79_97 {
+  position: absolute;
+  inset: -1px -1px -1px -1px;
+  border-radius: 6px 6px 6px 6px;
+  pointer-events: none;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-text-79_98 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: Regular;
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 126px;
+  height: 48px;
+  position: absolute;
+  left: 13px;
+  top: 275px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_98_0 {
+  line-height: 30.40799903869629px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-79_98_0_1 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-paragraph-79_98_1 {
+  line-height: 30.40799903869629px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-79_98_1_1 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-group-79_99 {
+  width: 102px;
+  height: 46px;
+  position: absolute;
+  left: 139px;
+  top: 287px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_100 {
+  width: 83px;
+  height: 46px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(236, 105, 153, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_101 {
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 102px;
+  height: 42px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_102 {
+  width: 26.08%;
+  height: 52.17%;
+  background-image: url(./image/Frame_79_102.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 61.96%;
+  right: 11.96%;
+  top: 26.09%;
+  bottom: 21.74%;
+}
+
+.Pixso-frame-45_162 {
+  width: 100%;
+  height: 333px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 15px 15px 15px 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/81988ef7482731b302b5ed3e726e9a5fd2f9bf22.png);
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_184 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 5px 5px 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/330f6f93456ea49896c15a9733e3e9b3652045cb.png);
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_184 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 222px;
+  height: 333px;
+}
+
+.stroke-79_184 {
+  position: absolute;
+  inset: -1px -1px -1px -1px;
+  border-radius: 6px 6px 6px 6px;
+  pointer-events: none;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-text-79_185 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: Regular;
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 126px;
+  height: 48px;
+  position: absolute;
+  left: 13px;
+  top: 275px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_185_0 {
+  line-height: 30.40799903869629px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-79_185_0_1 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-paragraph-79_185_1 {
+  line-height: 30.40799903869629px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-79_185_1_1 {
+  font-size: 21px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-group-79_186 {
+  width: 102px;
+  height: 46px;
+  position: absolute;
+  left: 139px;
+  top: 287px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_187 {
+  width: 83px;
+  height: 46px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(236, 105, 153, 1);
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_188 {
+  text-align: left;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 102px;
+  height: 42px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_189 {
+  width: 26.08%;
+  height: 52.17%;
+  background-image: url(./image/Frame_79_189.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 61.96%;
+  right: 11.96%;
+  top: 26.09%;
+  bottom: 21.74%;
+}
+
+.Pixso-frame-17_62 {
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-frame-46_270 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0.000244140625px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_48 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_49 {
+  width: 100%;
+  height: 11.72%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 88.28%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-symbol-20_115 {
+  width: 782px;
+  height: 79px;
+  position: absolute;
+  left: 287px;
+  top: 28px;
+}
+
+.Pixso-rectangle-17_64 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 0%;
+  right: 79.8%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+
+.Pixso-rectangle-17_65 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 79.8%;
+  right: 0%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+
+.Pixso-rectangle-17_66 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 26.6%;
+  right: 53.2%;
+  top: 2.53%;
+  bottom: 0%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+
+.Pixso-rectangle-17_67 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 53.2%;
+  right: 26.6%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+
+.Pixso-paragraph-17_68 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 2.94%;
+  right: 82.61%;
+  top: 15.19%;
+  bottom: 18.99%;
+}
+
+.Pixso-paragraph-17_69 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 29.54%;
+  right: 56.01%;
+  top: 16.46%;
+  bottom: 17.72%;
+}
+
+.Pixso-paragraph-17_70 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 56.14%;
+  right: 29.41%;
+  top: 18.99%;
+  bottom: 15.19%;
+}
+
+.Pixso-paragraph-17_71 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 82.74%;
+  right: 2.81%;
+  top: 18.99%;
+  bottom: 15.19%;
+}
+
+.Pixso-frame-17_72 {
+  width: 158.48545837402344px;
+  height: 23.999998092651367px;
+  position: absolute;
+  left: 1223px;
+  top: 50px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_193 {
+  width: 15.14%;
+  height: 5px;
+  background-image: url(./image/icon15.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 84.86%;
+  top: 50%;
+  transform: translateY(calc(-50% + 2.5000009536743164px));
+}
+
+.Pixso-vector-79_194 {
+  width: 10.71%;
+  height: 21.9912109375px;
+  background-image: url(./image/icon14.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.6%;
+  right: -0.31%;
+  top: 50%;
+  transform: translateY(calc(-50% + -0.5146474838256836px));
+}
+
+.Pixso-rectangle-79_197 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_197 {
+  position: absolute;
+  left: 44.8%;
+  top: 50%;
+  right: 40.06%;
+  width: 15.14%;
+  height: 23.999998092651367px;
+  transform: translateY(calc(-50% + 0px));
+}
+
+.stroke-79_197 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 3px 3px 3px 3px;
+  pointer-events: none;
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-rectangle-17_79 {
+  width: 315px;
+  height: 903px;
+  position: absolute;
+  left: -5px;
+  top: 121.000244140625px;
+}
+
+.Pixso-paragraph-17_87 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 163.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-17_88 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 67px;
+  top: 299.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-17_89 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 460.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-17_90 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 49px;
+  top: 623.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-17_91 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 782.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-17_92 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 5.9%;
+  right: 84.1%;
+  top: 92.09%;
+  bottom: 2.83%;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-72_293 {
+  font-size: 36px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: rgba(230, 230, 230, 1);
+  width: 315px;
+  height: 79px;
+  position: absolute;
+  left: 265px;
+  top: 123.500244140625px;
+}
+
+.Pixso-rectangle-72_295 {
+  width: 81px;
+  height: 76px;
+  position: absolute;
+  left: 361px;
+  top: 223.000244140625px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/a2b7cecbe8f8698b401d12c33eb41788ae4faa21.png);
+}
+
+.Pixso-paragraph-72_296 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Medium";
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: rgba(184, 184, 184, 1);
+  width: 91px;
+  height: auto;
+  position: absolute;
+  left: 381.5px;
+  top: 332.000244140625px;
+}
+
+.Pixso-paragraph-72_297 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Medium";
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: rgba(184, 184, 184, 1);
+  width: 120px;
+  height: auto;
+  position: absolute;
+  left: 382px;
+  top: 401.000244140625px;
+}
+
+.Pixso-paragraph-72_298 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Medium";
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: rgba(184, 184, 184, 1);
+  width: 60px;
+  height: auto;
+  position: absolute;
+  left: 397px;
+  top: 470.000244140625px;
+}
+
+.Pixso-paragraph-72_299 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Medium";
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: rgba(184, 184, 184, 1);
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 392px;
+  top: 539.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-46_273 {
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-frame-46_274 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0.000244140625px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_50 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_51 {
+  width: 100%;
+  height: 11.72%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 88.28%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-46_277 {
+  width: 782px;
+  height: 79px;
+  position: absolute;
+  left: 287px;
+  top: 28px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_40 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 0%;
+  right: 79.8%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_41 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 79.8%;
+  right: 0%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_42 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 26.6%;
+  right: 53.2%;
+  top: 2.53%;
+  bottom: 0%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_43 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 53.2%;
+  right: 26.6%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_44 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 2.94%;
+  right: 82.61%;
+  top: 15.19%;
+  bottom: 18.99%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_45 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 29.54%;
+  right: 56.01%;
+  top: 16.46%;
+  bottom: 17.72%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_46 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 56.14%;
+  right: 29.41%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_47 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 82.74%;
+  right: 2.81%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-46_286 {
+  width: 158.48545837402344px;
+  height: 23.999998092651367px;
+  position: absolute;
+  left: 1223px;
+  top: 50px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_140 {
+  width: 15.14%;
+  height: 5px;
+  background-image: url(./image/icon13.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 84.86%;
+  top: 50%;
+  transform: translateY(calc(-50% + 2.5000009536743164px));
+}
+
+.Pixso-vector-79_141 {
+  width: 10.71%;
+  height: 21.9912109375px;
+  background-image: url(./image/icon12.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.6%;
+  right: -0.31%;
+  top: 50%;
+  transform: translateY(calc(-50% + -0.5146474838256836px));
+}
+
+.Pixso-rectangle-79_144 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_144 {
+  position: absolute;
+  left: 44.8%;
+  top: 50%;
+  right: 40.06%;
+  width: 15.14%;
+  height: 23.999998092651367px;
+  transform: translateY(calc(-50% + 0px));
+}
+
+.stroke-79_144 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 3px 3px 3px 3px;
+  pointer-events: none;
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-rectangle-46_292 {
+  width: 315px;
+  height: 903px;
+  position: absolute;
+  left: -5px;
+  top: 121.000244140625px;
+}
+
+.Pixso-paragraph-46_293 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 163.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_294 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 67px;
+  top: 299.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_295 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 460.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_296 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 49px;
+  top: 623.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_297 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 782.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_298 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 5.9%;
+  right: 84.1%;
+  top: 92.09%;
+  bottom: 2.83%;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-46_299 {
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-frame-46_300 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0.000244140625px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_30 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_31 {
+  width: 100%;
+  height: 11.72%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 88.28%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-46_303 {
+  width: 782px;
+  height: 79px;
+  position: absolute;
+  left: 287px;
+  top: 28px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_32 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 0%;
+  right: 79.8%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_33 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 79.8%;
+  right: 0%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_34 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 26.6%;
+  right: 53.2%;
+  top: 2.53%;
+  bottom: 0%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_35 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 53.2%;
+  right: 26.6%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_36 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 2.94%;
+  right: 82.61%;
+  top: 15.19%;
+  bottom: 18.99%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_37 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 29.54%;
+  right: 56.01%;
+  top: 16.46%;
+  bottom: 17.72%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_38 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 56.14%;
+  right: 29.41%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_39 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 82.74%;
+  right: 2.81%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-46_312 {
+  width: 158.48545837402344px;
+  height: 23.999998092651367px;
+  position: absolute;
+  left: 1223px;
+  top: 50px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_65 {
+  width: 15.14%;
+  height: 5px;
+  background-image: url(./image/icon11.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 84.86%;
+  top: 50%;
+  transform: translateY(calc(-50% + 2.5000009536743164px));
+}
+
+.Pixso-vector-79_66 {
+  width: 10.71%;
+  height: 21.9912109375px;
+  background-image: url(./image/icon10.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.6%;
+  right: -0.31%;
+  top: 50%;
+  transform: translateY(calc(-50% + -0.5146474838256836px));
+}
+
+.Pixso-rectangle-79_69 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_69 {
+  position: absolute;
+  left: 44.8%;
+  top: 50%;
+  right: 40.06%;
+  width: 15.14%;
+  height: 23.999998092651367px;
+  transform: translateY(calc(-50% + 0px));
+}
+
+.stroke-79_69 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 3px 3px 3px 3px;
+  pointer-events: none;
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-rectangle-46_318 {
+  width: 315px;
+  height: 903px;
+  position: absolute;
+  left: -5px;
+  top: 121.000244140625px;
+}
+
+.Pixso-paragraph-46_319 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 163.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_320 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 67px;
+  top: 299.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_321 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 460.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_322 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 49px;
+  top: 623.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_323 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 782.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_324 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 5.9%;
+  right: 84.1%;
+  top: 92.09%;
+  bottom: 2.83%;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-46_325 {
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-frame-46_326 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0.000244140625px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_28 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_29 {
+  width: 100%;
+  height: 11.72%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 88.28%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-46_329 {
+  width: 782px;
+  height: 79px;
+  position: absolute;
+  left: 287px;
+  top: 28px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_165 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 0%;
+  right: 79.8%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_166 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 79.8%;
+  right: 0%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_167 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 26.6%;
+  right: 53.2%;
+  top: 2.53%;
+  bottom: 0%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_168 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 53.2%;
+  right: 26.6%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_169 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 2.94%;
+  right: 82.61%;
+  top: 15.19%;
+  bottom: 18.99%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_170 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 29.54%;
+  right: 56.01%;
+  top: 16.46%;
+  bottom: 17.72%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_171 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 56.14%;
+  right: 29.41%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_172 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 82.74%;
+  right: 2.81%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-46_338 {
+  width: 158.48545837402344px;
+  height: 23.999998092651367px;
+  position: absolute;
+  left: 1223px;
+  top: 50px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_23 {
+  width: 15.14%;
+  height: 5px;
+  background-image: url(./image/icon9.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 84.86%;
+  top: 50%;
+  transform: translateY(calc(-50% + 2.5000009536743164px));
+}
+
+.Pixso-vector-79_24 {
+  width: 10.71%;
+  height: 21.9912109375px;
+  background-image: url(./image/icon8.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.6%;
+  right: -0.31%;
+  top: 50%;
+  transform: translateY(calc(-50% + -0.5146474838256836px));
+}
+
+.Pixso-rectangle-79_27 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_27 {
+  position: absolute;
+  left: 44.8%;
+  top: 50%;
+  right: 40.06%;
+  width: 15.14%;
+  height: 23.999998092651367px;
+  transform: translateY(calc(-50% + 0px));
+}
+
+.stroke-79_27 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 3px 3px 3px 3px;
+  pointer-events: none;
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-rectangle-46_344 {
+  width: 315px;
+  height: 903px;
+  position: absolute;
+  left: -5px;
+  top: 121.000244140625px;
+}
+
+.Pixso-paragraph-46_345 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 163.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_346 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 67px;
+  top: 299.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_347 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 460.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_348 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 49px;
+  top: 623.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_349 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 782.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_350 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 5.9%;
+  right: 84.1%;
+  top: 92.09%;
+  bottom: 2.83%;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-46_351 {
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-frame-46_352 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0.000244140625px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_21 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_22 {
+  width: 100%;
+  height: 11.72%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 88.28%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-46_355 {
+  width: 782px;
+  height: 79px;
+  position: absolute;
+  left: 287px;
+  top: 28px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_250 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 0%;
+  right: 79.8%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_251 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 79.8%;
+  right: 0%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_252 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 26.6%;
+  right: 53.2%;
+  top: 2.53%;
+  bottom: 0%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_253 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 53.2%;
+  right: 26.6%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_254 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 2.94%;
+  right: 82.61%;
+  top: 15.19%;
+  bottom: 18.99%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_255 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 29.54%;
+  right: 56.01%;
+  top: 16.46%;
+  bottom: 17.72%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_256 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 56.14%;
+  right: 29.41%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_257 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 82.74%;
+  right: 2.81%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-46_364 {
+  width: 158.48545837402344px;
+  height: 23.999998092651367px;
+  position: absolute;
+  left: 1223px;
+  top: 50px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_236 {
+  width: 15.14%;
+  height: 5px;
+  background-image: url(./image/icon7.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 84.86%;
+  top: 50%;
+  transform: translateY(calc(-50% + 2.5000009536743164px));
+}
+
+.Pixso-vector-79_237 {
+  width: 10.71%;
+  height: 21.9912109375px;
+  background-image: url(./image/icon6.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.6%;
+  right: -0.31%;
+  top: 50%;
+  transform: translateY(calc(-50% + -0.5146474838256836px));
+}
+
+.Pixso-rectangle-79_240 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_240 {
+  position: absolute;
+  left: 44.8%;
+  top: 50%;
+  right: 40.06%;
+  width: 15.14%;
+  height: 23.999998092651367px;
+  transform: translateY(calc(-50% + 0px));
+}
+
+.stroke-79_240 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 3px 3px 3px 3px;
+  pointer-events: none;
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-rectangle-46_370 {
+  width: 315px;
+  height: 903px;
+  position: absolute;
+  left: -5px;
+  top: 121.000244140625px;
+}
+
+.Pixso-paragraph-46_371 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 163.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_372 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 67px;
+  top: 299.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_373 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 460.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_374 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 49px;
+  top: 623.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_375 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 782.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_376 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 5.9%;
+  right: 84.1%;
+  top: 92.09%;
+  bottom: 2.83%;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-46_377 {
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-frame-46_378 {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0.000244140625px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_19 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_20 {
+  width: 100%;
+  height: 11.72%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 88.28%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-46_381 {
+  width: 782px;
+  height: 79px;
+  position: absolute;
+  left: 287px;
+  top: 28px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_11 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 0%;
+  right: 79.8%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_12 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 79.8%;
+  right: 0%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_13 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 26.6%;
+  right: 53.2%;
+  top: 2.53%;
+  bottom: 0%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-rectangle-79_14 {
+  width: 20.2%;
+  height: 97.47%;
+  position: absolute;
+  left: 53.2%;
+  right: 26.6%;
+  top: 0%;
+  bottom: 2.53%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_15 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 2.94%;
+  right: 82.61%;
+  top: 15.19%;
+  bottom: 18.99%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_16 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 29.54%;
+  right: 56.01%;
+  top: 16.46%;
+  bottom: 17.72%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_17 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 56.14%;
+  right: 29.41%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-paragraph-79_18 {
+  font-size: 30px;
+  font-family: "Source Han Sans CN-Heavy";
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  width: 14.45%;
+  height: 65.82%;
+  position: absolute;
+  left: 82.74%;
+  right: 2.81%;
+  top: 18.99%;
+  bottom: 15.19%;
+  mix-blend-mode: normal;
+}
+
+.Pixso-frame-46_390 {
+  width: 158.48545837402344px;
+  height: 23.999998092651367px;
+  position: absolute;
+  left: 1223px;
+  top: 50px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_6 {
+  width: 15.14%;
+  height: 5px;
+  background-image: url(./image/icon5.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 84.86%;
+  top: 50%;
+  transform: translateY(calc(-50% + 2.5000009536743164px));
+}
+
+.Pixso-vector-79_7 {
+  width: 10.71%;
+  height: 21.9912109375px;
+  background-image: url(./image/icon4.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.6%;
+  right: -0.31%;
+  top: 50%;
+  transform: translateY(calc(-50% + -0.5146474838256836px));
+}
+
+.Pixso-rectangle-79_10 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_10 {
+  position: absolute;
+  left: 44.8%;
+  top: 50%;
+  right: 40.06%;
+  width: 15.14%;
+  height: 23.999998092651367px;
+  transform: translateY(calc(-50% + 0px));
+}
+
+.stroke-79_10 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 3px 3px 3px 3px;
+  pointer-events: none;
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-rectangle-46_396 {
+  width: 315px;
+  height: 903px;
+  position: absolute;
+  left: -5px;
+  top: 121.000244140625px;
+}
+
+.Pixso-paragraph-46_397 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 163.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_398 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 67px;
+  top: 299.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_399 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 460.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_400 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 49px;
+  top: 623.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_401 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 85px;
+  top: 782.000244140625px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-46_402 {
+  font-size: 36px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 5.9%;
+  right: 84.1%;
+  top: 92.09%;
+  bottom: 2.83%;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-17_94 {
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  background-color: rgba(15, 22, 28, 1);
+}
+
+.Pixso-rectangle-17_97 {
+  width: 96px;
+  height: 149px;
+  position: absolute;
+  left: 1274px;
+  top: 818px;
+  background-color: rgba(196, 196, 196, 1);
+}
+
+.Pixso-vector-17_99 {
+  position: absolute;
+  inset: -5.729166666666666% -11.535135904947918% -5.729166666666666% -11.535135904947918% ;
+  background-image: url(./image/Frame_17_99.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.vector-wrapper-17_99 {
+  position: absolute;
+  left: 93.47%;
+  right: 4.86%;
+  top: 94.43%;
+  bottom: 3.22%;
+  width: 24px;
+  height: 24px;
+}
+
+.Pixso-frame-42_47 {
+  width: 100%;
+  height: 840px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-frame-42_48 {
+  width: 1260px;
+  height: 840px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-frame-42_49 {
+  width: 1260px;
+  height: 840px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-frame-42_50 {
+  width: 1260px;
+  height: 840px;
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-frame-42_51 {
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  position: absolute;
+  left: 1194px;
+  top: 769px;
+}
+
+.Pixso-frame-42_52 {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-frame-42_53 {
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-frame-42_54 {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-content-42_54 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.Pixso-frame-42_55 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-frame-42_56 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
+
+.Pixso-vector-42_57 {
+  width: 75%;
+  height: 54.16%;
+  background-image: url(./image/Group_42_57.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 12.5%;
+  right: 12.5%;
+  top: 22.92%;
+  bottom: 22.92%;
+}
+
+.Pixso-rectangle-42_60 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: rgba(206, 206, 206, 1);
+}
+
+.stroke-wrapper-42_60 {
+  position: absolute;
+  left: 1127.999900817871px;
+  top: 589.0000991821289px;
+  width: 180.0500030517578px;
+  height: 90px;
+  transform:  rotate(90deg);
+}
+
+.stroke-42_60 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 0px 0px 0px 0px;
+  pointer-events: none;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(187, 187, 187, 1);
+}
+
+.Pixso-frame-42_61 {
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  position: absolute;
+  left: 1170px;
+  top: 769px;
+}
+
+.Pixso-frame-42_62 {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-frame-42_63 {
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-frame-42_64 {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-content-42_64 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.Pixso-frame-42_65 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-frame-42_66 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
+
+.Pixso-group-42_67 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
+
+.Pixso-rectangle-42_68 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background-color: rgba(16, 16, 16, 0.009999999776482582);
+}
+
+.Pixso-rectangle-42_69 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3.5px 3.5px 3.5px 3.5px;
+}
+
+.stroke-wrapper-42_69 {
+  position: absolute;
+  left: 35.42%;
+  top: 8.33%;
+  right: 35.42%;
+  bottom: 35.42%;
+  width: 29.16%;
+  height: 56.25%;
+}
+
+.stroke-42_69 {
+  position: absolute;
+  inset: -1px -1px -1px -1px;
+  border-radius: 3.5px 3.5px 3.5px 3.5px;
+  pointer-events: none;
+  border-width: 2px 2px 2px 2px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: rgba(16, 16, 16, 1);
+}
+
+.Pixso-vector-42_70 {
+  width: 62.5%;
+  height: 31.25%;
+  background-image: url(./image/Vector_42_70.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 18.75%;
+  right: 18.75%;
+  top: 47.92%;
+  bottom: 20.83%;
+}
+
+.Pixso-vector-42_71 {
+  width: 7.7%;
+  height: 12.5%;
+  background-image: url(./image/Vector_42_71.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 46.15%;
+  right: 46.15%;
+  top: 79.17%;
+  bottom: 8.33%;
+}
+
+.Pixso-frame-38_55 {
+  width: 100%;
+  height: 202px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-symbol-50_257 {
+  width: 100%;
+  height: 64px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-rectangle-50_242 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgba(196, 196, 196, 1);
+}
+
+.Pixso-rectangle-50_241 {
+  width: 6.78%;
+  height: 56.24%;
+  position: absolute;
+  left: 3.95%;
+  right: 89.27%;
+  top: 21.88%;
+  bottom: 21.88%;
+  border-radius: 5px 5px 5px 5px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/c9a9268d8db658a39fb4b051f8a6a2bd05b500c9.png);
+}
+
+.Pixso-paragraph-50_245 {
+  font-size: 14px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  width: 32.77%;
+  height: 51.56%;
+  position: absolute;
+  left: 13.37%;
+  right: 53.86%;
+  top: 23.44%;
+  bottom: 25%;
+}
+
+.Pixso-vector-50_246 {
+  width: 4.52%;
+  height: 37.5%;
+  background-image: url(./image/Frame_50_246.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 79.85%;
+  right: 15.63%;
+  top: 31.25%;
+  bottom: 31.25%;
+}
+
+.Pixso-rectangle-50_254 {
+  width: 11.3%;
+  height: 37.5%;
+  position: absolute;
+  left: 86.44%;
+  right: 2.26%;
+  top: 31.25%;
+  bottom: 31.25%;
+  border-radius: 20px 20px 20px 20px;
+  background-color: rgba(142, 142, 142, 1);
+}
+
+.Pixso-rectangle-50_256 {
+  width: 4.52%;
+  height: 37.5%;
+  position: absolute;
+  left: 86.44%;
+  right: 9.04%;
+  top: 31.25%;
+  bottom: 31.25%;
+  border-radius: 20px 20px 20px 20px;
+  background-color: rgba(234, 234, 234, 1);
+}
+
+.Pixso-symbol-50_272 {
+  width: 100%;
+  height: 64px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-rectangle-50_273 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgba(196, 196, 196, 1);
+}
+
+.Pixso-rectangle-50_274 {
+  width: 6.78%;
+  height: 56.24%;
+  position: absolute;
+  left: 3.95%;
+  right: 89.27%;
+  top: 21.88%;
+  bottom: 21.88%;
+  border-radius: 5px 5px 5px 5px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/c9a9268d8db658a39fb4b051f8a6a2bd05b500c9.png);
+}
+
+.Pixso-paragraph-50_275 {
+  font-size: 14px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  width: 32.77%;
+  height: 51.56%;
+  position: absolute;
+  left: 13.37%;
+  right: 53.86%;
+  top: 23.44%;
+  bottom: 25%;
+}
+
+.Pixso-vector-50_276 {
+  width: 4.52%;
+  height: 37.5%;
+  background-image: url(./image/Frame_50_276.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 79.85%;
+  right: 15.63%;
+  top: 31.25%;
+  bottom: 31.25%;
+}
+
+.Pixso-rectangle-50_283 {
+  width: 11.3%;
+  height: 37.5%;
+  position: absolute;
+  left: 86.44%;
+  right: 2.26%;
+  top: 31.25%;
+  bottom: 31.25%;
+  border-radius: 20px 20px 20px 20px;
+  background-color: rgba(10, 194, 0, 1);
+}
+
+.Pixso-rectangle-50_284 {
+  width: 4.52%;
+  height: 37.5%;
+  position: absolute;
+  left: 93.22%;
+  right: 2.26%;
+  top: 31.25%;
+  bottom: 31.25%;
+  border-radius: 20px 20px 20px 20px;
+  background-color: rgba(234, 234, 234, 1);
+}
+
+.Pixso-frame-50_312 {
+  width: 100%;
+  height: 803px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-rectangle-50_328 {
+  width: 957px;
+  height: 803px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-rectangle-50_314 {
+  width: 957px;
+  height: 55px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.Pixso-frame-50_321 {
+  width: 158.48545837402344px;
+  height: 23.999998092651367px;
+  position: absolute;
+  left: 780px;
+  top: 16px;
+  mix-blend-mode: normal;
+}
+
+.Pixso-vector-79_1 {
+  width: 15.14%;
+  height: 5px;
+  background-image: url(./image/icon3.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 84.86%;
+  top: 50%;
+  transform: translateY(calc(-50% + 2.5000009536743164px));
+}
+
+.Pixso-vector-79_2 {
+  width: 10.71%;
+  height: 22.274002075195312px;
+  background-image: url(./image/icon2.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 89.6%;
+  right: -0.31%;
+  top: 50%;
+  transform: translateY(calc(-50% + -0.5146474838256836px));
+}
+
+.Pixso-rectangle-79_5 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+  mix-blend-mode: normal;
+}
+
+.stroke-wrapper-79_5 {
+  position: absolute;
+  left: 44.8%;
+  top: 50%;
+  right: 40.06%;
+  width: 15.14%;
+  height: 23.999998092651367px;
+  transform: translateY(calc(-50% + 0px));
+}
+
+.stroke-79_5 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 3px 3px 3px 3px;
+  pointer-events: none;
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.Pixso-paragraph-50_327 {
+  font-size: 14px;
+  font-family: "Noto Sans SC-Regular";
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  width: 216px;
+  height: 55px;
+  position: absolute;
+  left: 26px;
+  top: 0px;
+}
+
+.Pixso-rectangle-50_330 {
+  width: 916px;
+  height: 455px;
+  position: absolute;
+  left: 22px;
+  top: 75px;
+  background-color: rgba(196, 196, 196, 1);
+}
+
+.Pixso-frame-72_275 {
+  width: 100%;
+  height: 720px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-rectangle-72_289 {
+  width: 728px;
+  height: 720px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.Pixso-group-72_278 {
+  width: 90px;
+  height: 94px;
+  position: absolute;
+  left: 541px;
+  top: 527.0000610351562px;
+}
+
+.Pixso-rectangle-72_276 {
+  width: 90px;
+  height: 94px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgba(196, 196, 196, 1);
+}
+
+.Pixso-paragraph-72_277 {
+  width: 72px;
+  height: auto;
+  position: absolute;
+  left: 9px;
+  top: 21px;
+}
+
+.Pixso-group-72_279 {
+  width: 421px;
+  height: 94px;
+  position: absolute;
+  left: 97px;
+  top: 527.0000610351562px;
+}
+
+.Pixso-rectangle-72_280 {
+  width: 421px;
+  height: 94px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgba(196, 196, 196, 1);
+}
+
+.Pixso-paragraph-72_281 {
+  color: rgba(0, 0, 0, 1);
+  width: 72px;
+  height: auto;
+  position: absolute;
+  left: 180px;
+  top: 21px;
+}
+
+.Pixso-group-72_286 {
+  width: 534px;
+  height: 63px;
+  position: absolute;
+  left: 97px;
+  top: 363.00006103515625px;
+}
+
+.Pixso-rectangle-72_284 {
+  width: 534px;
+  height: 63px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgba(196, 196, 196, 1);
+}
+
+.Pixso-paragraph-72_285 {
+  font-size: 24px;
+  font-family: "Source Han Sans CN-Light";
+  font-weight: 300;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 11px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-group-72_287 {
+  width: 534px;
+  height: 63px;
+  position: absolute;
+  left: 97px;
+  top: 251.00006103515625px;
+}
+
+.Pixso-rectangle-72_282 {
+  width: 534px;
+  height: 63px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgba(196, 196, 196, 1);
+}
+
+.Pixso-paragraph-72_283 {
+  font-size: 24px;
+  font-family: "Source Han Sans CN-Light";
+  font-weight: 300;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 11px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-rectangle-72_291 {
+  width: 485px;
+  height: 111px;
+  position: absolute;
+  left: 162px;
+  top: 75px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/5373b9e400111e98e0bc6c79c52b37af9fa1753f.png);
+}
+
+.Pixso-rectangle-72_292 {
+  width: 81px;
+  height: 76px;
+  position: absolute;
+  left: 81px;
+  top: 93px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./image/a2b7cecbe8f8698b401d12c33eb41788ae4faa21.png);
+}
+
+
+  </style>
+</head>
+<body>
+<div class="scroll-container">
+  <div id="0_1" class="Pixso-canvas-0_1">
+    <div id="3_51" class="Pixso-frame-3_51">
+      <div id="46_203" class="Pixso-frame-46_203">
+        <div id="79_72" class="Pixso-rectangle-79_72 fill-背景颜色-20_45"></div>
+        <div id="79_73" class="Pixso-rectangle-79_73 fill-导航栏字体颜色-20_48"></div>
+      </div>
+      <div id="36_80" class="Pixso-rectangle-36_80"></div>
+      <div id="3_64" class="Pixso-frame-3_64">
+        <div id="79_83" class="Pixso-vector-79_83"></div>
+        <div id="79_84" class="Pixso-vector-79_84"></div>
+        <div id="79_87" class="stroke-wrapper-79_87">
+          <div class="Pixso-rectangle-79_87"></div>
+          <div class="stroke-79_87 stroke-右上角关闭放大窗口图标颜色-20_59"></div>
+        </div>
+      </div>
+      <div id="6_26" class="Pixso-rectangle-6_26"></div>
+      <div id="6_27" class="Pixso-rectangle-6_27" style="cursor: pointer;"></div>
+      <div id="6_29" class="Pixso-rectangle-6_29" style="cursor: pointer;"></div>
+      <p id="6_36" class="Pixso-paragraph-6_36">工坊</p>
+      <p id="6_34" class="Pixso-paragraph-6_34">模型</p>
+      <div id="36_78" class="Pixso-group-36_78">
+        <div id="36_39" class="Pixso-rectangle-36_39"></div>
+        <div id="36_77" class="Pixso-rectangle-36_77"></div>
+      </div>
+      <div id="36_81" class="Pixso-rectangle-36_81"></div>
+      <div id="36_82" class="Pixso-rectangle-36_82"></div>
+      <div id="20_188" class="Pixso-frame-20_188">
+        <div id="79_258" class="Pixso-rectangle-79_258 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="79_259" class="Pixso-rectangle-79_259 fill-导航栏背景颜色-20_52"></div>
+        <div id="79_260" class="Pixso-rectangle-79_260 fill-导航栏点亮时背景颜色-20_56" style="cursor: pointer;"></div>
+        <div id="79_261" class="Pixso-rectangle-79_261 fill-导航栏背景颜色-20_52"></div>
+        <p id="79_262" class="Pixso-paragraph-79_262 fill-导航栏字体颜色-20_48-paragraph">首页</p>
+        <p id="79_263" class="Pixso-paragraph-79_263 fill-导航栏字体颜色-20_48-paragraph">伙伴</p>
+        <p id="79_264" class="Pixso-paragraph-79_264 fill-导航栏字体颜色-20_48-paragraph">游戏</p>
+        <p id="79_265" class="Pixso-paragraph-79_265 fill-导航栏字体颜色-20_48-paragraph">设置</p>
+      </div>
+    </div>
+    <div id="46_206" class="Pixso-frame-46_206">
+      <div id="46_207" class="Pixso-frame-46_207">
+        <div id="79_151" class="Pixso-rectangle-79_151 fill-背景颜色-20_45"></div>
+        <div id="79_152" class="Pixso-rectangle-79_152 fill-导航栏字体颜色-20_48"></div>
+      </div>
+      <div id="46_210" class="Pixso-rectangle-46_210"></div>
+      <div id="46_211" class="Pixso-frame-46_211">
+        <div id="79_106" class="Pixso-vector-79_106"></div>
+        <div id="79_107" class="Pixso-vector-79_107"></div>
+        <div id="79_110" class="stroke-wrapper-79_110">
+          <div class="Pixso-rectangle-79_110"></div>
+          <div class="stroke-79_110 stroke-右上角关闭放大窗口图标颜色-20_59"></div>
+        </div>
+      </div>
+      <div id="46_217" class="Pixso-rectangle-46_217"></div>
+      <div id="46_218" class="Pixso-rectangle-46_218" style="cursor: pointer;"></div>
+      <div id="46_219" class="Pixso-rectangle-46_219" style="cursor: pointer;"></div>
+      <p id="46_220" class="Pixso-paragraph-46_220">工坊</p>
+      <p id="46_221" class="Pixso-paragraph-46_221">模型</p>
+      <div id="46_222" class="Pixso-group-46_222">
+        <div id="46_223" class="Pixso-rectangle-46_223"></div>
+        <div id="46_224" class="Pixso-rectangle-46_224"></div>
+      </div>
+      <div id="46_225" class="Pixso-rectangle-46_225"></div>
+      <div id="46_226" class="Pixso-rectangle-46_226"></div>
+      <div id="46_227" class="Pixso-frame-46_227">
+        <div id="79_218" class="Pixso-rectangle-79_218 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="79_219" class="Pixso-rectangle-79_219 fill-导航栏背景颜色-20_52"></div>
+        <div id="79_220" class="Pixso-rectangle-79_220 fill-导航栏点亮时背景颜色-20_56" style="cursor: pointer;"></div>
+        <div id="79_221" class="Pixso-rectangle-79_221 fill-导航栏背景颜色-20_52"></div>
+        <p id="79_222" class="Pixso-paragraph-79_222 fill-导航栏字体颜色-20_48-paragraph">首页</p>
+        <p id="79_223" class="Pixso-paragraph-79_223 fill-导航栏字体颜色-20_48-paragraph">伙伴</p>
+        <p id="79_224" class="Pixso-paragraph-79_224 fill-导航栏字体颜色-20_48-paragraph">游戏</p>
+        <p id="79_225" class="Pixso-paragraph-79_225 fill-导航栏字体颜色-20_48-paragraph">设置</p>
+      </div>
+    </div>
+    <div id="46_238" class="Pixso-frame-46_238">
+      <div id="46_239" class="Pixso-frame-46_239">
+        <div id="79_123" class="Pixso-rectangle-79_123 fill-背景颜色-20_45"></div>
+        <div id="79_124" class="Pixso-rectangle-79_124 fill-导航栏字体颜色-20_48"></div>
+      </div>
+      <div id="46_242" class="Pixso-rectangle-46_242"></div>
+      <div id="46_243" class="Pixso-frame-46_243">
+        <div id="79_60" class="Pixso-vector-79_60"></div>
+        <div id="79_61" class="Pixso-vector-79_61"></div>
+        <div id="79_64" class="stroke-wrapper-79_64">
+          <div class="Pixso-rectangle-79_64"></div>
+          <div class="stroke-79_64 stroke-右上角关闭放大窗口图标颜色-20_59"></div>
+        </div>
+      </div>
+      <div id="46_249" class="Pixso-rectangle-46_249"></div>
+      <div id="46_250" class="Pixso-rectangle-46_250" style="cursor: pointer;"></div>
+      <div id="46_251" class="Pixso-rectangle-46_251" style="cursor: pointer;"></div>
+      <p id="46_252" class="Pixso-paragraph-46_252">工坊</p>
+      <p id="46_253" class="Pixso-paragraph-46_253">模型</p>
+      <div id="46_254" class="Pixso-group-46_254">
+        <div id="46_255" class="Pixso-rectangle-46_255"></div>
+        <div id="46_256" class="Pixso-rectangle-46_256"></div>
+      </div>
+      <div id="46_257" class="Pixso-rectangle-46_257"></div>
+      <div id="46_258" class="Pixso-rectangle-46_258"></div>
+      <div id="46_259" class="Pixso-frame-46_259">
+        <div id="79_52" class="Pixso-rectangle-79_52 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="79_53" class="Pixso-rectangle-79_53 fill-导航栏背景颜色-20_52"></div>
+        <div id="79_54" class="Pixso-rectangle-79_54 fill-导航栏点亮时背景颜色-20_56" style="cursor: pointer;"></div>
+        <div id="79_55" class="Pixso-rectangle-79_55 fill-导航栏背景颜色-20_52"></div>
+        <p id="79_56" class="Pixso-paragraph-79_56 fill-导航栏字体颜色-20_48-paragraph">首页</p>
+        <p id="79_57" class="Pixso-paragraph-79_57 fill-导航栏字体颜色-20_48-paragraph">伙伴</p>
+        <p id="79_58" class="Pixso-paragraph-79_58 fill-导航栏字体颜色-20_48-paragraph">游戏</p>
+        <p id="79_59" class="Pixso-paragraph-79_59 fill-导航栏字体颜色-20_48-paragraph">设置</p>
+      </div>
+    </div>
+    <div id="3_65" class="Pixso-frame-3_65">
+      <div id="3_66" class="Pixso-group-3_66">
+        <div id="3_67" class="Pixso-rectangle-3_67 fill-背景颜色-20_45"></div>
+        <div id="3_68" class="Pixso-rectangle-3_68 fill-导航栏字体颜色-20_48"></div>
+      </div>
+      <div id="3_69" class="Pixso-frame-3_69">
+        <div id="3_70" class="Pixso-rectangle-3_70"></div>
+        <div id="3_71" class="Pixso-rectangle-3_71"></div>
+        <p id="3_72" class="Pixso-paragraph-3_72">当前伙伴</p>
+        <p id="3_73" class="Pixso-paragraph-3_73">杂鱼酱</p>
+        <div id="46_404" class="Pixso-rectangle-46_404"></div>
+        <p id="46_405" class="Pixso-paragraph-46_405">建议：</p>
+      </div>
+      <div id="3_74" class="Pixso-frame-3_74">
+        <div id="3_75" class="Pixso-rectangle-3_75"></div>
+        <p id="3_76" class="Pixso-paragraph-3_76">最近游戏</p>
+        <div id="3_77" class="stroke-wrapper-3_77">
+          <div class="Pixso-rectangle-3_77"></div>
+          <div class="stroke-3_77"></div>
+        </div>
+        <div id="3_78" class="stroke-wrapper-3_78">
+          <div class="Pixso-rectangle-3_78"></div>
+          <div class="stroke-3_78"></div>
+        </div>
+      </div>
+      <div id="3_79" class="Pixso-frame-3_79">
+        <div id="3_80" class="Pixso-rectangle-3_80"></div>
+        <p id="3_81" class="Pixso-paragraph-3_81">屏幕获取权限</p>
+        <div id="50_238" class="Pixso-vector-50_238" style="cursor: pointer;"></div>
+        <div id="50_285" class="Pixso-frame-50_285">
+          <div id="79_153" class="Pixso-rectangle-79_153"></div>
+          <div id="79_154" class="Pixso-rectangle-79_154"></div>
+          <p id="79_155" class="Pixso-paragraph-79_155">bilibili（应用窗口）</p>
+          <div id="79_156" class="Pixso-vector-79_156"></div>
+          <div id="79_163" class="Pixso-rectangle-79_163"></div>
+          <div id="79_164" class="Pixso-rectangle-79_164"></div>
+        </div>
+        <div id="50_298" class="Pixso-frame-50_298">
+          <div id="79_111" class="Pixso-rectangle-79_111"></div>
+          <div id="79_112" class="Pixso-rectangle-79_112"></div>
+          <p id="79_113" class="Pixso-paragraph-79_113">bilibili（应用窗口）</p>
+          <div id="79_114" class="Pixso-vector-79_114"></div>
+          <div id="79_121" class="Pixso-rectangle-79_121"></div>
+          <div id="79_122" class="Pixso-rectangle-79_122"></div>
+        </div>
+      </div>
+      <div id="3_82" class="Pixso-group-3_82">
+        <div id="3_83" class="Pixso-rectangle-3_83 fill-导航栏点亮时背景颜色-20_56"></div>
+        <div id="3_84" class="Pixso-rectangle-3_84 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="3_85" class="Pixso-rectangle-3_85 fill-导航栏背景颜色-20_52"></div>
+        <div id="3_86" class="Pixso-rectangle-3_86 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <p id="3_87" class="Pixso-paragraph-3_87 fill-导航栏字体颜色-20_48-paragraph">首页</p>
+        <p id="3_88" class="Pixso-paragraph-3_88 fill-导航栏字体颜色-20_48-paragraph">伙伴</p>
+        <p id="3_89" class="Pixso-paragraph-3_89 fill-导航栏字体颜色-20_48-paragraph">游戏</p>
+        <p id="3_90" class="Pixso-paragraph-3_90 fill-导航栏字体颜色-20_48-paragraph">设置</p>
+      </div>
+      <div id="3_91" class="Pixso-symbol-3_91">
+        <div id="3_92" class="Pixso-vector-3_92"></div>
+        <div id="3_93" class="Pixso-vector-3_93"></div>
+        <div id="3_96" class="stroke-wrapper-3_96">
+          <div class="Pixso-rectangle-3_96"></div>
+          <div class="stroke-3_96 stroke-右上角关闭放大窗口图标颜色-20_59"></div>
+        </div>
+      </div>
+    </div>
+    <div id="6_42" class="Pixso-frame-6_42">
+      <div id="6_43" class="Pixso-group-6_43">
+        <div id="6_44" class="Pixso-rectangle-6_44 fill-背景颜色-20_45"></div>
+        <div id="6_45" class="Pixso-rectangle-6_45 fill-导航栏背景颜色-20_52"></div>
+      </div>
+      <div id="6_46" class="Pixso-group-6_46">
+        <div id="6_47" class="Pixso-rectangle-6_47" style="cursor: pointer;"></div>
+        <div id="6_48" class="Pixso-rectangle-6_48"></div>
+        <div id="6_49" class="Pixso-rectangle-6_49"></div>
+        <div id="6_50" class="Pixso-rectangle-6_50"></div>
+        <p id="6_51" class="Pixso-paragraph-6_51">首页</p>
+        <p id="6_52" class="Pixso-paragraph-6_52">伙伴</p>
+        <p id="6_53" class="Pixso-paragraph-6_53">游戏</p>
+        <p id="6_54" class="Pixso-paragraph-6_54">设置</p>
+      </div>
+      <div id="6_55" class="Pixso-frame-6_55">
+        <div id="79_231" class="Pixso-vector-79_231"></div>
+        <div id="79_232" class="Pixso-vector-79_232"></div>
+        <div id="79_235" class="stroke-wrapper-79_235">
+          <div class="Pixso-rectangle-79_235"></div>
+          <div class="stroke-79_235 stroke-右上角关闭放大窗口图标颜色-20_59"></div>
+        </div>
+      </div>
+      <div id="6_56" class="Pixso-rectangle-6_56"></div>
+      <div id="6_57" class="Pixso-rectangle-6_57" style="cursor: pointer;"></div>
+      <div id="6_58" class="Pixso-rectangle-6_58" style="cursor: pointer;"></div>
+      <p id="6_59" class="Pixso-paragraph-6_59">工坊</p>
+      <p id="6_60" class="Pixso-paragraph-6_60">模型</p>
+      <div id="6_102" class="Pixso-rectangle-6_102"></div>
+      <div id="6_97" class="Pixso-frame-6_97">
+        <div id="6_98" class="Pixso-group-6_98">
+          <div id="6_99" class="Pixso-vector-6_99"></div>
+          <div id="6_100" class="Pixso-vector-6_100"></div>
+        </div>
+      </div>
+      <p id="6_103" class="Pixso-paragraph-6_103">点击选择或者拖入自制模型和配置文件</p>
+    </div>
+    <div id="17_31" class="Pixso-frame-17_31 fill-背景颜色-20_45">
+      <div id="46_202" class="Pixso-symbol-46_202">
+        <div id="46_200" class="Pixso-rectangle-46_200 fill-背景颜色-20_45"></div>
+        <div id="46_201" class="Pixso-rectangle-46_201 fill-导航栏字体颜色-20_48"></div>
+      </div>
+      <div id="57_266" class="Pixso-rectangle-57_266"></div>
+      <div id="17_33" class="Pixso-group-17_33">
+        <div id="17_34" class="Pixso-rectangle-17_34 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="17_43" class="Pixso-rectangle-17_43 fill-导航栏点亮时背景颜色-20_56"></div>
+        <div id="17_36" class="Pixso-rectangle-17_36 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="17_37" class="Pixso-rectangle-17_37 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <p id="17_38" class="Pixso-paragraph-17_38 fill-导航栏字体颜色-20_48-paragraph">首页</p>
+        <p id="17_39" class="Pixso-paragraph-17_39 fill-导航栏字体颜色-20_48-paragraph">伙伴</p>
+        <p id="17_40" class="Pixso-paragraph-17_40 fill-导航栏字体颜色-20_48-paragraph">游戏</p>
+        <p id="17_41" class="Pixso-paragraph-17_41 fill-导航栏字体颜色-20_48-paragraph">设置</p>
+      </div>
+      <div id="17_50" class="Pixso-frame-17_50">
+        <div id="79_226" class="Pixso-vector-79_226"></div>
+        <div id="79_227" class="Pixso-vector-79_227"></div>
+        <div id="79_230" class="stroke-wrapper-79_230">
+          <div class="Pixso-rectangle-79_230"></div>
+          <div class="stroke-79_230 stroke-右上角关闭放大窗口图标颜色-20_59"></div>
+        </div>
+      </div>
+    </div>
+    <div id="21_46" class="Pixso-symbol-21_46">
+      <div id="19_39" class="stroke-wrapper-19_39">
+        <div class="Pixso-rectangle-19_39"></div>
+        <div class="stroke-19_39"></div>
+      </div>
+      <p id="38_47" class="Pixso-paragraph-38_47 fill-页面标题文本颜色-20_67-paragraph">奥日</p>
+      <div id="45_47" class="Pixso-group-45_47">
+        <div id="21_45" class="Pixso-rectangle-21_45"></div>
+        <p id="21_40" class="Pixso-paragraph-21_40 fill-页面标题文本颜色-20_67-paragraph text-页面内其他文本大小-20_78">启动</p>
+        <div id="38_48" class="Pixso-vector-38_48"></div>
+      </div>
+    </div>
+    <div id="45_121" class="Pixso-frame-45_121">
+      <div id="79_74" class="stroke-wrapper-79_74">
+        <div class="Pixso-rectangle-79_74"></div>
+        <div class="stroke-79_74"></div>
+      </div>
+      <p id="79_75" class="Pixso-paragraph-79_75 fill-页面标题文本颜色-20_67-paragraph">木筏</p>
+      <div id="79_76" class="Pixso-group-79_76">
+        <div id="79_77" class="Pixso-rectangle-79_77"></div>
+        <p id="79_78" class="Pixso-paragraph-79_78 fill-页面标题文本颜色-20_67-paragraph text-页面内其他文本大小-20_78">启动</p>
+        <div id="79_79" class="Pixso-vector-79_79"></div>
+      </div>
+    </div>
+    <div id="45_58" class="Pixso-frame-45_58">
+      <div id="79_209" class="stroke-wrapper-79_209">
+        <div class="Pixso-rectangle-79_209"></div>
+        <div class="stroke-79_209"></div>
+      </div>
+      <p id="79_210" class="Pixso-paragraph-79_210 fill-页面标题文本颜色-20_67-paragraph">双影奇境</p>
+      <div id="79_211" class="Pixso-group-79_211">
+        <div id="79_212" class="Pixso-rectangle-79_212"></div>
+        <p id="79_213" class="Pixso-paragraph-79_213 fill-页面标题文本颜色-20_67-paragraph text-页面内其他文本大小-20_78">启动</p>
+        <div id="79_214" class="Pixso-vector-79_214"></div>
+      </div>
+    </div>
+    <div id="45_91" class="Pixso-frame-45_91">
+      <div id="79_88" class="stroke-wrapper-79_88">
+        <div class="Pixso-rectangle-79_88"></div>
+        <div class="stroke-79_88"></div>
+      </div>
+      <p id="79_89" class="Pixso-paragraph-79_89 fill-页面标题文本颜色-20_67-paragraph">以撒的结合：重生</p>
+      <div id="79_90" class="Pixso-group-79_90">
+        <div id="79_91" class="Pixso-rectangle-79_91"></div>
+        <p id="79_92" class="Pixso-paragraph-79_92 fill-页面标题文本颜色-20_67-paragraph text-页面内其他文本大小-20_78">启动</p>
+        <div id="79_93" class="Pixso-vector-79_93"></div>
+      </div>
+    </div>
+    <div id="45_101" class="Pixso-frame-45_101">
+      <div id="79_125" class="stroke-wrapper-79_125">
+        <div class="Pixso-rectangle-79_125"></div>
+        <div class="stroke-79_125"></div>
+      </div>
+      <p id="79_126" class="Pixso-paragraph-79_126 fill-页面标题文本颜色-20_67-paragraph">PEAK</p>
+      <div id="79_127" class="Pixso-group-79_127">
+        <div id="79_128" class="Pixso-rectangle-79_128"></div>
+        <p id="79_129" class="Pixso-paragraph-79_129 fill-页面标题文本颜色-20_67-paragraph text-页面内其他文本大小-20_78">启动</p>
+        <div id="79_130" class="Pixso-vector-79_130"></div>
+      </div>
+    </div>
+    <div id="45_111" class="Pixso-frame-45_111">
+      <div id="79_173" class="stroke-wrapper-79_173">
+        <div class="Pixso-rectangle-79_173"></div>
+        <div class="stroke-79_173"></div>
+      </div>
+      <div id="79_174" class="Pixso-text-79_174 fill-页面标题文本颜色-20_67-text">
+        <p id="79_174_0" class="Pixso-paragraph-79_174_0">
+<span id="79_174_0_1" class="Pixso-span-79_174_0_1">空洞骑士：</span></p>
+        <p id="79_174_1" class="Pixso-paragraph-79_174_1">
+<span id="79_174_1_1" class="Pixso-span-79_174_1_1">丝之歌</span></p>
+      </div>
+      <div id="79_175" class="Pixso-group-79_175">
+        <div id="79_176" class="Pixso-rectangle-79_176"></div>
+        <p id="79_177" class="Pixso-paragraph-79_177 fill-页面标题文本颜色-20_67-paragraph text-页面内其他文本大小-20_78">启动</p>
+        <div id="79_178" class="Pixso-vector-79_178"></div>
+      </div>
+    </div>
+    <div id="45_131" class="Pixso-frame-45_131">
+      <div id="79_241" class="stroke-wrapper-79_241">
+        <div class="Pixso-rectangle-79_241"></div>
+        <div class="stroke-79_241"></div>
+      </div>
+      <p id="79_242" class="Pixso-paragraph-79_242 fill-页面标题文本颜色-20_67-paragraph">失落城堡2</p>
+      <div id="79_243" class="Pixso-group-79_243">
+        <div id="79_244" class="Pixso-rectangle-79_244"></div>
+        <p id="79_245" class="Pixso-paragraph-79_245 fill-页面标题文本颜色-20_67-paragraph text-页面内其他文本大小-20_78">启动</p>
+        <div id="79_246" class="Pixso-vector-79_246"></div>
+      </div>
+    </div>
+    <div id="45_141" class="Pixso-frame-45_141">
+      <div id="79_198" class="stroke-wrapper-79_198">
+        <div class="Pixso-rectangle-79_198"></div>
+        <div class="stroke-79_198"></div>
+      </div>
+      <p id="79_199" class="Pixso-paragraph-79_199 fill-页面标题文本颜色-20_67-paragraph">超级银河战士</p>
+      <div id="79_200" class="Pixso-group-79_200">
+        <div id="79_201" class="Pixso-rectangle-79_201"></div>
+        <p id="79_202" class="Pixso-paragraph-79_202 fill-页面标题文本颜色-20_67-paragraph text-页面内其他文本大小-20_78">启动</p>
+        <div id="79_203" class="Pixso-vector-79_203"></div>
+      </div>
+    </div>
+    <div id="45_151" class="Pixso-frame-45_151">
+      <div id="79_97" class="stroke-wrapper-79_97">
+        <div class="Pixso-rectangle-79_97"></div>
+        <div class="stroke-79_97"></div>
+      </div>
+      <div id="79_98" class="Pixso-text-79_98 fill-页面标题文本颜色-20_67-text">
+        <p id="79_98_0" class="Pixso-paragraph-79_98_0">
+<span id="79_98_0_1" class="Pixso-span-79_98_0_1">黑暗之魂</span></p>
+        <p id="79_98_1" class="Pixso-paragraph-79_98_1">
+<span id="79_98_1_1" class="Pixso-span-79_98_1_1">重制版</span></p>
+      </div>
+      <div id="79_99" class="Pixso-group-79_99">
+        <div id="79_100" class="Pixso-rectangle-79_100"></div>
+        <p id="79_101" class="Pixso-paragraph-79_101 fill-页面标题文本颜色-20_67-paragraph text-页面内其他文本大小-20_78">启动</p>
+        <div id="79_102" class="Pixso-vector-79_102"></div>
+      </div>
+    </div>
+    <div id="45_162" class="Pixso-frame-45_162">
+      <div id="79_184" class="stroke-wrapper-79_184">
+        <div class="Pixso-rectangle-79_184"></div>
+        <div class="stroke-79_184"></div>
+      </div>
+      <div id="79_185" class="Pixso-text-79_185 fill-页面标题文本颜色-20_67-text">
+        <p id="79_185_0" class="Pixso-paragraph-79_185_0">
+<span id="79_185_0_1" class="Pixso-span-79_185_0_1">塞尔达传说：</span></p>
+        <p id="79_185_1" class="Pixso-paragraph-79_185_1">
+<span id="79_185_1_1" class="Pixso-span-79_185_1_1">梅祖拉的假面</span></p>
+      </div>
+      <div id="79_186" class="Pixso-group-79_186">
+        <div id="79_187" class="Pixso-rectangle-79_187"></div>
+        <p id="79_188" class="Pixso-paragraph-79_188 fill-页面标题文本颜色-20_67-paragraph text-页面内其他文本大小-20_78">启动</p>
+        <div id="79_189" class="Pixso-vector-79_189"></div>
+      </div>
+    </div>
+    <div id="17_62" class="Pixso-frame-17_62">
+      <div id="46_270" class="Pixso-frame-46_270">
+        <div id="79_48" class="Pixso-rectangle-79_48 fill-背景颜色-20_45"></div>
+        <div id="79_49" class="Pixso-rectangle-79_49 fill-导航栏字体颜色-20_48"></div>
+      </div>
+      <div id="20_115" class="Pixso-symbol-20_115">
+        <div id="17_64" class="Pixso-rectangle-17_64 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="17_65" class="Pixso-rectangle-17_65 fill-导航栏点亮时背景颜色-20_56"></div>
+        <div id="17_66" class="Pixso-rectangle-17_66 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="17_67" class="Pixso-rectangle-17_67 fill-导航栏背景颜色-20_52"></div>
+        <p id="17_68" class="Pixso-paragraph-17_68 fill-导航栏字体颜色-20_48-paragraph">首页</p>
+        <p id="17_69" class="Pixso-paragraph-17_69 fill-导航栏字体颜色-20_48-paragraph">伙伴</p>
+        <p id="17_70" class="Pixso-paragraph-17_70 fill-导航栏字体颜色-20_48-paragraph">游戏</p>
+        <p id="17_71" class="Pixso-paragraph-17_71 fill-导航栏字体颜色-20_48-paragraph">设置</p>
+      </div>
+      <div id="17_72" class="Pixso-frame-17_72">
+        <div id="79_193" class="Pixso-vector-79_193"></div>
+        <div id="79_194" class="Pixso-vector-79_194"></div>
+        <div id="79_197" class="stroke-wrapper-79_197">
+          <div class="Pixso-rectangle-79_197"></div>
+          <div class="stroke-79_197"></div>
+        </div>
+      </div>
+      <div id="17_79" class="Pixso-rectangle-17_79 fill-设置左侧边栏背景颜色-20_61"></div>
+      <p id="17_87" class="Pixso-paragraph-17_87 fill-设置栏目点击时字体颜色-20_64-paragraph">个人资料</p>
+      <p id="17_88" class="Pixso-paragraph-17_88 fill-页面内其他文本颜色-20_70-paragraph">快捷键设置</p>
+      <p id="17_89" class="Pixso-paragraph-17_89 fill-页面内其他文本颜色-20_70-paragraph">通用设置</p>
+      <p id="17_90" class="Pixso-paragraph-17_90 fill-页面内其他文本颜色-20_70-paragraph">画面设别权限</p>
+      <p id="17_91" class="Pixso-paragraph-17_91 fill-页面内其他文本颜色-20_70-paragraph">语音设置</p>
+      <p id="17_92" class="Pixso-paragraph-17_92 fill-页面内其他文本颜色-20_70-paragraph">用户反馈</p>
+      <p id="72_293" class="Pixso-paragraph-72_293">个人资料</p>
+      <div id="72_295" class="Pixso-rectangle-72_295"></div>
+      <p id="72_296" class="Pixso-paragraph-72_296">用户ID</p>
+      <p id="72_297" class="Pixso-paragraph-72_297">用户昵称</p>
+      <p id="72_298" class="Pixso-paragraph-72_298">性别</p>
+      <p id="72_299" class="Pixso-paragraph-72_299">生日</p>
+    </div>
+    <div id="46_273" class="Pixso-frame-46_273">
+      <div id="46_274" class="Pixso-frame-46_274">
+        <div id="79_50" class="Pixso-rectangle-79_50 fill-背景颜色-20_45"></div>
+        <div id="79_51" class="Pixso-rectangle-79_51 fill-导航栏字体颜色-20_48"></div>
+      </div>
+      <div id="46_277" class="Pixso-frame-46_277">
+        <div id="79_40" class="Pixso-rectangle-79_40 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="79_41" class="Pixso-rectangle-79_41 fill-导航栏点亮时背景颜色-20_56"></div>
+        <div id="79_42" class="Pixso-rectangle-79_42 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="79_43" class="Pixso-rectangle-79_43 fill-导航栏背景颜色-20_52"></div>
+        <p id="79_44" class="Pixso-paragraph-79_44 fill-导航栏字体颜色-20_48-paragraph">首页</p>
+        <p id="79_45" class="Pixso-paragraph-79_45 fill-导航栏字体颜色-20_48-paragraph">伙伴</p>
+        <p id="79_46" class="Pixso-paragraph-79_46 fill-导航栏字体颜色-20_48-paragraph">游戏</p>
+        <p id="79_47" class="Pixso-paragraph-79_47 fill-导航栏字体颜色-20_48-paragraph">设置</p>
+      </div>
+      <div id="46_286" class="Pixso-frame-46_286">
+        <div id="79_140" class="Pixso-vector-79_140"></div>
+        <div id="79_141" class="Pixso-vector-79_141"></div>
+        <div id="79_144" class="stroke-wrapper-79_144">
+          <div class="Pixso-rectangle-79_144"></div>
+          <div class="stroke-79_144"></div>
+        </div>
+      </div>
+      <div id="46_292" class="Pixso-rectangle-46_292 fill-设置左侧边栏背景颜色-20_61"></div>
+      <p id="46_293" class="Pixso-paragraph-46_293 fill-设置栏目点击时字体颜色-20_64-paragraph">个人资料</p>
+      <p id="46_294" class="Pixso-paragraph-46_294 fill-页面内其他文本颜色-20_70-paragraph">快捷键设置</p>
+      <p id="46_295" class="Pixso-paragraph-46_295 fill-页面内其他文本颜色-20_70-paragraph">通用设置</p>
+      <p id="46_296" class="Pixso-paragraph-46_296 fill-页面内其他文本颜色-20_70-paragraph">画面设别权限</p>
+      <p id="46_297" class="Pixso-paragraph-46_297 fill-页面内其他文本颜色-20_70-paragraph">语音设置</p>
+      <p id="46_298" class="Pixso-paragraph-46_298 fill-页面内其他文本颜色-20_70-paragraph">用户反馈</p>
+    </div>
+    <div id="46_299" class="Pixso-frame-46_299">
+      <div id="46_300" class="Pixso-frame-46_300">
+        <div id="79_30" class="Pixso-rectangle-79_30 fill-背景颜色-20_45"></div>
+        <div id="79_31" class="Pixso-rectangle-79_31 fill-导航栏字体颜色-20_48"></div>
+      </div>
+      <div id="46_303" class="Pixso-frame-46_303">
+        <div id="79_32" class="Pixso-rectangle-79_32 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="79_33" class="Pixso-rectangle-79_33 fill-导航栏点亮时背景颜色-20_56"></div>
+        <div id="79_34" class="Pixso-rectangle-79_34 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="79_35" class="Pixso-rectangle-79_35 fill-导航栏背景颜色-20_52"></div>
+        <p id="79_36" class="Pixso-paragraph-79_36 fill-导航栏字体颜色-20_48-paragraph">首页</p>
+        <p id="79_37" class="Pixso-paragraph-79_37 fill-导航栏字体颜色-20_48-paragraph">伙伴</p>
+        <p id="79_38" class="Pixso-paragraph-79_38 fill-导航栏字体颜色-20_48-paragraph">游戏</p>
+        <p id="79_39" class="Pixso-paragraph-79_39 fill-导航栏字体颜色-20_48-paragraph">设置</p>
+      </div>
+      <div id="46_312" class="Pixso-frame-46_312">
+        <div id="79_65" class="Pixso-vector-79_65"></div>
+        <div id="79_66" class="Pixso-vector-79_66"></div>
+        <div id="79_69" class="stroke-wrapper-79_69">
+          <div class="Pixso-rectangle-79_69"></div>
+          <div class="stroke-79_69"></div>
+        </div>
+      </div>
+      <div id="46_318" class="Pixso-rectangle-46_318 fill-设置左侧边栏背景颜色-20_61"></div>
+      <p id="46_319" class="Pixso-paragraph-46_319 fill-设置栏目点击时字体颜色-20_64-paragraph">个人资料</p>
+      <p id="46_320" class="Pixso-paragraph-46_320 fill-页面内其他文本颜色-20_70-paragraph">快捷键设置</p>
+      <p id="46_321" class="Pixso-paragraph-46_321 fill-页面内其他文本颜色-20_70-paragraph">通用设置</p>
+      <p id="46_322" class="Pixso-paragraph-46_322 fill-页面内其他文本颜色-20_70-paragraph">画面设别权限</p>
+      <p id="46_323" class="Pixso-paragraph-46_323 fill-页面内其他文本颜色-20_70-paragraph">语音设置</p>
+      <p id="46_324" class="Pixso-paragraph-46_324 fill-页面内其他文本颜色-20_70-paragraph">用户反馈</p>
+    </div>
+    <div id="46_325" class="Pixso-frame-46_325">
+      <div id="46_326" class="Pixso-frame-46_326">
+        <div id="79_28" class="Pixso-rectangle-79_28 fill-背景颜色-20_45"></div>
+        <div id="79_29" class="Pixso-rectangle-79_29 fill-导航栏字体颜色-20_48"></div>
+      </div>
+      <div id="46_329" class="Pixso-frame-46_329">
+        <div id="79_165" class="Pixso-rectangle-79_165 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="79_166" class="Pixso-rectangle-79_166 fill-导航栏点亮时背景颜色-20_56"></div>
+        <div id="79_167" class="Pixso-rectangle-79_167 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="79_168" class="Pixso-rectangle-79_168 fill-导航栏背景颜色-20_52"></div>
+        <p id="79_169" class="Pixso-paragraph-79_169 fill-导航栏字体颜色-20_48-paragraph">首页</p>
+        <p id="79_170" class="Pixso-paragraph-79_170 fill-导航栏字体颜色-20_48-paragraph">伙伴</p>
+        <p id="79_171" class="Pixso-paragraph-79_171 fill-导航栏字体颜色-20_48-paragraph">游戏</p>
+        <p id="79_172" class="Pixso-paragraph-79_172 fill-导航栏字体颜色-20_48-paragraph">设置</p>
+      </div>
+      <div id="46_338" class="Pixso-frame-46_338">
+        <div id="79_23" class="Pixso-vector-79_23"></div>
+        <div id="79_24" class="Pixso-vector-79_24"></div>
+        <div id="79_27" class="stroke-wrapper-79_27">
+          <div class="Pixso-rectangle-79_27"></div>
+          <div class="stroke-79_27"></div>
+        </div>
+      </div>
+      <div id="46_344" class="Pixso-rectangle-46_344 fill-设置左侧边栏背景颜色-20_61"></div>
+      <p id="46_345" class="Pixso-paragraph-46_345 fill-设置栏目点击时字体颜色-20_64-paragraph">个人资料</p>
+      <p id="46_346" class="Pixso-paragraph-46_346 fill-页面内其他文本颜色-20_70-paragraph">快捷键设置</p>
+      <p id="46_347" class="Pixso-paragraph-46_347 fill-页面内其他文本颜色-20_70-paragraph">通用设置</p>
+      <p id="46_348" class="Pixso-paragraph-46_348 fill-页面内其他文本颜色-20_70-paragraph">画面设别权限</p>
+      <p id="46_349" class="Pixso-paragraph-46_349 fill-页面内其他文本颜色-20_70-paragraph">语音设置</p>
+      <p id="46_350" class="Pixso-paragraph-46_350 fill-页面内其他文本颜色-20_70-paragraph">用户反馈</p>
+    </div>
+    <div id="46_351" class="Pixso-frame-46_351">
+      <div id="46_352" class="Pixso-frame-46_352">
+        <div id="79_21" class="Pixso-rectangle-79_21 fill-背景颜色-20_45"></div>
+        <div id="79_22" class="Pixso-rectangle-79_22 fill-导航栏字体颜色-20_48"></div>
+      </div>
+      <div id="46_355" class="Pixso-frame-46_355">
+        <div id="79_250" class="Pixso-rectangle-79_250 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="79_251" class="Pixso-rectangle-79_251 fill-导航栏点亮时背景颜色-20_56"></div>
+        <div id="79_252" class="Pixso-rectangle-79_252 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="79_253" class="Pixso-rectangle-79_253 fill-导航栏背景颜色-20_52"></div>
+        <p id="79_254" class="Pixso-paragraph-79_254 fill-导航栏字体颜色-20_48-paragraph">首页</p>
+        <p id="79_255" class="Pixso-paragraph-79_255 fill-导航栏字体颜色-20_48-paragraph">伙伴</p>
+        <p id="79_256" class="Pixso-paragraph-79_256 fill-导航栏字体颜色-20_48-paragraph">游戏</p>
+        <p id="79_257" class="Pixso-paragraph-79_257 fill-导航栏字体颜色-20_48-paragraph">设置</p>
+      </div>
+      <div id="46_364" class="Pixso-frame-46_364">
+        <div id="79_236" class="Pixso-vector-79_236"></div>
+        <div id="79_237" class="Pixso-vector-79_237"></div>
+        <div id="79_240" class="stroke-wrapper-79_240">
+          <div class="Pixso-rectangle-79_240"></div>
+          <div class="stroke-79_240"></div>
+        </div>
+      </div>
+      <div id="46_370" class="Pixso-rectangle-46_370 fill-设置左侧边栏背景颜色-20_61"></div>
+      <p id="46_371" class="Pixso-paragraph-46_371 fill-设置栏目点击时字体颜色-20_64-paragraph">个人资料</p>
+      <p id="46_372" class="Pixso-paragraph-46_372 fill-页面内其他文本颜色-20_70-paragraph">快捷键设置</p>
+      <p id="46_373" class="Pixso-paragraph-46_373 fill-页面内其他文本颜色-20_70-paragraph">通用设置</p>
+      <p id="46_374" class="Pixso-paragraph-46_374 fill-页面内其他文本颜色-20_70-paragraph">画面设别权限</p>
+      <p id="46_375" class="Pixso-paragraph-46_375 fill-页面内其他文本颜色-20_70-paragraph">语音设置</p>
+      <p id="46_376" class="Pixso-paragraph-46_376 fill-页面内其他文本颜色-20_70-paragraph">用户反馈</p>
+    </div>
+    <div id="46_377" class="Pixso-frame-46_377">
+      <div id="46_378" class="Pixso-frame-46_378">
+        <div id="79_19" class="Pixso-rectangle-79_19 fill-背景颜色-20_45"></div>
+        <div id="79_20" class="Pixso-rectangle-79_20 fill-导航栏字体颜色-20_48"></div>
+      </div>
+      <div id="46_381" class="Pixso-frame-46_381">
+        <div id="79_11" class="Pixso-rectangle-79_11 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="79_12" class="Pixso-rectangle-79_12 fill-导航栏点亮时背景颜色-20_56"></div>
+        <div id="79_13" class="Pixso-rectangle-79_13 fill-导航栏背景颜色-20_52" style="cursor: pointer;"></div>
+        <div id="79_14" class="Pixso-rectangle-79_14 fill-导航栏背景颜色-20_52"></div>
+        <p id="79_15" class="Pixso-paragraph-79_15 fill-导航栏字体颜色-20_48-paragraph">首页</p>
+        <p id="79_16" class="Pixso-paragraph-79_16 fill-导航栏字体颜色-20_48-paragraph">伙伴</p>
+        <p id="79_17" class="Pixso-paragraph-79_17 fill-导航栏字体颜色-20_48-paragraph">游戏</p>
+        <p id="79_18" class="Pixso-paragraph-79_18 fill-导航栏字体颜色-20_48-paragraph">设置</p>
+      </div>
+      <div id="46_390" class="Pixso-frame-46_390">
+        <div id="79_6" class="Pixso-vector-79_6"></div>
+        <div id="79_7" class="Pixso-vector-79_7"></div>
+        <div id="79_10" class="stroke-wrapper-79_10">
+          <div class="Pixso-rectangle-79_10"></div>
+          <div class="stroke-79_10"></div>
+        </div>
+      </div>
+      <div id="46_396" class="Pixso-rectangle-46_396 fill-设置左侧边栏背景颜色-20_61"></div>
+      <p id="46_397" class="Pixso-paragraph-46_397 fill-设置栏目点击时字体颜色-20_64-paragraph">个人资料</p>
+      <p id="46_398" class="Pixso-paragraph-46_398 fill-页面内其他文本颜色-20_70-paragraph">快捷键设置</p>
+      <p id="46_399" class="Pixso-paragraph-46_399 fill-页面内其他文本颜色-20_70-paragraph">通用设置</p>
+      <p id="46_400" class="Pixso-paragraph-46_400 fill-页面内其他文本颜色-20_70-paragraph">画面设别权限</p>
+      <p id="46_401" class="Pixso-paragraph-46_401 fill-页面内其他文本颜色-20_70-paragraph">语音设置</p>
+      <p id="46_402" class="Pixso-paragraph-46_402 fill-页面内其他文本颜色-20_70-paragraph">用户反馈</p>
+    </div>
+    <div id="17_94" class="Pixso-frame-17_94">
+      <div id="17_97" class="Pixso-rectangle-17_97" style="cursor: pointer;"></div>
+      <div id="17_99_wrapper" class="vector-wrapper-17_99" style="cursor: pointer;">
+        <div id="17_99" class="Pixso-vector-17_99" style="cursor: pointer;"></div>
+      </div>
+    </div>
+    <div id="42_47" class="Pixso-frame-42_47">
+      <div id="42_48" class="Pixso-frame-42_48">
+        <div id="42_49" class="Pixso-frame-42_49">
+          <div id="42_50" class="Pixso-frame-42_50">
+            <div id="42_51" class="Pixso-frame-42_51">
+              <div id="42_52" class="Pixso-frame-42_52">
+                <div id="42_53" class="Pixso-frame-42_53">
+                  <div id="42_54" class="Pixso-frame-42_54">
+                    <div class="frame-content-42_54">
+                      <div id="42_55" class="Pixso-frame-42_55">
+                        <div id="42_56" class="Pixso-frame-42_56">
+                          <div id="42_57" class="Pixso-vector-42_57"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="42_60" class="stroke-wrapper-42_60">
+              <div class="Pixso-rectangle-42_60"></div>
+              <div class="stroke-42_60"></div>
+            </div>
+            <div id="42_61" class="Pixso-frame-42_61">
+              <div id="42_62" class="Pixso-frame-42_62">
+                <div id="42_63" class="Pixso-frame-42_63">
+                  <div id="42_64" class="Pixso-frame-42_64">
+                    <div class="frame-content-42_64">
+                      <div id="42_65" class="Pixso-frame-42_65">
+                        <div id="42_66" class="Pixso-frame-42_66">
+                          <div id="42_67" class="Pixso-group-42_67">
+                            <div id="42_68" class="Pixso-rectangle-42_68"></div>
+                            <div id="42_69" class="stroke-wrapper-42_69">
+                              <div class="Pixso-rectangle-42_69"></div>
+                              <div class="stroke-42_69"></div>
+                            </div>
+                            <div id="42_70" class="Pixso-vector-42_70"></div>
+                            <div id="42_71" class="Pixso-vector-42_71"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="38_55" class="Pixso-frame-38_55"></div>
+    <div id="50_257" class="Pixso-symbol-50_257">
+      <div id="50_242" class="Pixso-rectangle-50_242"></div>
+      <div id="50_241" class="Pixso-rectangle-50_241"></div>
+      <p id="50_245" class="Pixso-paragraph-50_245">bilibili（应用窗口）</p>
+      <div id="50_246" class="Pixso-vector-50_246"></div>
+      <div id="50_254" class="Pixso-rectangle-50_254"></div>
+      <div id="50_256" class="Pixso-rectangle-50_256"></div>
+    </div>
+    <div id="50_272" class="Pixso-symbol-50_272">
+      <div id="50_273" class="Pixso-rectangle-50_273"></div>
+      <div id="50_274" class="Pixso-rectangle-50_274"></div>
+      <p id="50_275" class="Pixso-paragraph-50_275">bilibili（应用窗口）</p>
+      <div id="50_276" class="Pixso-vector-50_276"></div>
+      <div id="50_283" class="Pixso-rectangle-50_283"></div>
+      <div id="50_284" class="Pixso-rectangle-50_284"></div>
+    </div>
+    <div id="50_312" class="Pixso-frame-50_312 fill-背景颜色-20_45">
+      <div id="50_328" class="Pixso-rectangle-50_328 fill-背景颜色-20_45"></div>
+      <div id="50_314" class="Pixso-rectangle-50_314"></div>
+      <div id="50_321" class="Pixso-frame-50_321">
+        <div id="79_1" class="Pixso-vector-79_1"></div>
+        <div id="79_2" class="Pixso-vector-79_2"></div>
+        <div id="79_5" class="stroke-wrapper-79_5">
+          <div class="Pixso-rectangle-79_5"></div>
+          <div class="stroke-79_5 stroke-右上角关闭放大窗口图标颜色-20_59"></div>
+        </div>
+      </div>
+      <p id="50_327" class="Pixso-paragraph-50_327">设置“屏幕获取权限”</p>
+      <div id="50_330" class="Pixso-rectangle-50_330"></div>
+    </div>
+    <div id="72_275" class="Pixso-frame-72_275">
+      <div id="72_289" class="Pixso-rectangle-72_289 fill-背景颜色-20_45"></div>
+      <div id="72_278" class="Pixso-group-72_278">
+        <div id="72_276" class="Pixso-rectangle-72_276"></div>
+        <p id="72_277" class="Pixso-paragraph-72_277 fill-导航栏字体颜色-20_48-paragraph text-页面内标题字体大小-20_74">注册</p>
+      </div>
+      <div id="72_279" class="Pixso-group-72_279">
+        <div id="72_280" class="Pixso-rectangle-72_280"></div>
+        <p id="72_281" class="Pixso-paragraph-72_281 text-页面内标题字体大小-20_74">登录</p>
+      </div>
+      <div id="72_286" class="Pixso-group-72_286">
+        <div id="72_284" class="Pixso-rectangle-72_284"></div>
+        <p id="72_285" class="Pixso-paragraph-72_285 fill-导航栏字体颜色-20_48-paragraph">请输入密码</p>
+      </div>
+      <div id="72_287" class="Pixso-group-72_287">
+        <div id="72_282" class="Pixso-rectangle-72_282"></div>
+        <p id="72_283" class="Pixso-paragraph-72_283 fill-导航栏字体颜色-20_48-paragraph">请输入账号</p>
+      </div>
+      <div id="72_291" class="Pixso-rectangle-72_291"></div>
+      <div id="72_292" class="Pixso-rectangle-72_292"></div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
