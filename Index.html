@@ -181,6 +181,7 @@
             <button type="button" class="settings-nav-item" data-settings="快捷键设置">快捷键设置</button>
             <button type="button" class="settings-nav-item" data-settings="通用设置">通用设置</button>
             <button type="button" class="settings-nav-item" data-settings="画面识别权限">画面识别权限</button>
+            <button type="button" class="settings-nav-item" data-settings="记忆空间">记忆空间</button>
             <button type="button" class="settings-nav-item" data-settings="语音设置">语音设置</button>
             <button type="button" class="settings-nav-item" data-settings="用户反馈">用户反馈</button>
           </nav>
@@ -331,6 +332,22 @@
               </button>
             </div>
             <ul class="settings-permission-list" id="settings-permission-list"></ul>
+          </section>
+
+          <!-- 记忆空间 -->
+          <section class="settings-panel hidden" id="settings-panel-记忆空间">
+            <h2 class="settings-panel-title">记忆空间</h2>
+            <p class="settings-panel-desc">打开后，伙伴能够长期保存你的偏好，并在后续的对话中参考过往的聊天记录</p>
+            <div class="settings-option-row memory-master-row">
+              <span class="settings-option-label">记忆</span>
+              <label class="permission-toggle">
+                <input type="checkbox" id="setting-memory-enabled" checked>
+                <span class="toggle-track"><span class="toggle-knob"></span></span>
+              </label>
+            </div>
+            <div class="memory-cards" id="memory-cards">
+              <!-- Rendered by JS -->
+            </div>
           </section>
 
           <!-- 语音设置 -->

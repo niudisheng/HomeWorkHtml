@@ -101,6 +101,37 @@ let voiceSettings = {
   volume: 100,
 };
 
+let memorySettings = {
+  enabled: true,
+};
+
+let memoryCardsData = [
+  {
+    id: 'mem-1',
+    gameTitle: '奥日',
+    posterImg: 'image/b63ab57ba457a26a735a16a3bce3e3e646c6ff80.png',
+    date: '2026.01.25',
+    avatarImg: 'image/a2b7cecbe8f8698b401d12c33eb41788ae4faa21.png',
+    messages: [
+      { text: '在画面右边还有个可收集物', side: 'left' },
+      { text: '哪里？', side: 'right' },
+      { text: '右边', side: 'left' },
+    ],
+  },
+  {
+    id: 'mem-2',
+    gameTitle: '奥日',
+    posterImg: 'image/b63ab57ba457a26a735a16a3bce3e3e646c6ff80.png',
+    date: '2026.03.09',
+    avatarImg: 'image/a2b7cecbe8f8698b401d12c33eb41788ae4faa21.png',
+    messages: [
+      { text: '生日快乐！', side: 'left' },
+      { text: '你还知道我生日的？', side: 'right' },
+      { text: '那是自然', side: 'left' },
+    ],
+  },
+];
+
 function loadSettingsFromStorage() {
   try {
     const raw = localStorage.getItem(SETTINGS_STORAGE_KEY);
@@ -109,6 +140,7 @@ function loadSettingsFromStorage() {
     if (data.userProfile) userProfile = { ...userProfile, ...data.userProfile };
     if (data.generalSettings) generalSettings = { ...generalSettings, ...data.generalSettings };
     if (data.voiceSettings) voiceSettings = { ...voiceSettings, ...data.voiceSettings };
+    if (data.memorySettings) memorySettings = { ...memorySettings, ...data.memorySettings };
     if (data.activeSettingsSubtab) activeSettingsSubtab = data.activeSettingsSubtab;
   } catch (_) { /* ignore corrupt storage */ }
 }
@@ -119,6 +151,7 @@ function saveSettingsToStorage() {
       userProfile,
       generalSettings,
       voiceSettings,
+      memorySettings,
       activeSettingsSubtab,
     }));
   } catch (_) { /* ignore quota errors */ }
@@ -166,6 +199,53 @@ function applyVoiceSettingsToUI() {
   if (languageEl) languageEl.value = voiceSettings.language;
   if (volumeEl) volumeEl.value = String(voiceSettings.volume);
   if (volumeText) volumeText.textContent = String(voiceSettings.volume);
+}
+
+function applyMemorySettingsToUI() {
+  const memoryEnabled = document.getElementById('setting-memory-enabled');
+  if (memoryEnabled) memoryEnabled.checked = memorySettings.enabled;
+  renderMemoryCards();
+}
+
+function renderMemoryCards() {
+  const container = document.getElementById('memory-cards');
+  if (!container) return;
+
+  if (!memorySettings.enabled) {
+    container.innerHTML = '<p class="memory-empty-hint">记忆功能已关闭，开启后可查看伙伴保存的对话记忆</p>';
+    return;
+  }
+
+  container.innerHTML = memoryCardsData
+    .map((card) => `
+      <div class="memory-card" data-memory-id="${card.id}">
+        <div class="memory-card-poster">
+          <img src="${card.posterImg}" alt="${escapeHtml(card.gameTitle)}">
+          <div class="memory-card-poster-stroke"></div>
+          <span class="memory-card-poster-title">${escapeHtml(card.gameTitle)}</span>
+        </div>
+        <div class="memory-card-content">
+          <span class="memory-card-date">${escapeHtml(card.date)}</span>
+          ${card.messages.map((msg, i) => `
+            <div class="memory-msg-bubble ${msg.side === 'right' ? 'memory-msg-right' : ''}">${escapeHtml(msg.text)}</div>
+          `).join('')}
+        </div>
+        <img class="memory-card-avatar" src="${card.avatarImg}" alt="头像">
+        <button class="memory-detail-btn" data-memory-detail="${card.id}">详情</button>
+      </div>
+    `).join('');
+
+  // Bind detail button clicks
+  container.querySelectorAll('.memory-detail-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = memoryCardsData.find(c => c.id === btn.dataset.memoryDetail);
+      if (card) {
+        showToast('info', `查看记忆详情：「${card.gameTitle}」— ${card.date}`);
+        Bus.emit('memory:detail', card);
+      }
+    });
+  });
 }
 
 function updateDialogueFrequencyUI() {
@@ -720,6 +800,7 @@ function initSettings() {
   applyProfileToUI();
   applyGeneralSettingsToUI();
   applyVoiceSettingsToUI();
+  applyMemorySettingsToUI();
   setSettingsSubtab(activeSettingsSubtab);
 
   document.querySelectorAll('.settings-nav-item').forEach(btn => {
@@ -788,6 +869,15 @@ function initSettings() {
     if (text) text.textContent = String(voiceSettings.volume);
     saveSettingsToStorage();
     Bus.emit('settings:voice-change', { ...voiceSettings });
+  });
+
+  // Memory settings
+  document.getElementById('setting-memory-enabled')?.addEventListener('change', (e) => {
+    memorySettings.enabled = e.target.checked;
+    saveSettingsToStorage();
+    renderMemoryCards();
+    Bus.emit('settings:memory-change', { ...memorySettings });
+    showToast('info', `记忆功能已${e.target.checked ? '开启' : '关闭'}`);
   });
 
   document.getElementById('btn-add-permission-settings')?.addEventListener('click', () => {
@@ -1014,6 +1104,8 @@ window.CompanionUI = {
     userProfile: { ...userProfile },
     generalSettings: { ...generalSettings },
     voiceSettings: { ...voiceSettings },
+    memorySettings: { ...memorySettings },
+    memoryCardsData: [...memoryCardsData],
     gameLibrary: [...gameLibrary],
     shopItems: [...shopItems],
     screenPermissions: [...screenPermissions],
