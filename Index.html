@@ -166,12 +166,211 @@
       </div>
     </main>
 
-    <!-- ====== Tab: 设置 ====== -->
+    <!-- ====== Tab: 设置 (React Frame1762 / 46_273~46_377 reference) ====== -->
     <main class="tab-content tab-settings hidden" id="tab-设置">
-      <div class="tab-placeholder">
-        <div class="placeholder-icon">⚙️</div>
-        <h2>设置</h2>
-        <p>即将开放 — 在这里配置伙伴行为和通用偏好</p>
+      <div class="settings-layout">
+        <aside class="settings-sidebar">
+          <nav class="settings-nav" id="settings-nav">
+            <button type="button" class="settings-nav-item active" data-settings="个人资料">个人资料</button>
+            <button type="button" class="settings-nav-item" data-settings="快捷键设置">快捷键设置</button>
+            <button type="button" class="settings-nav-item" data-settings="通用设置">通用设置</button>
+            <button type="button" class="settings-nav-item" data-settings="画面识别权限">画面识别权限</button>
+            <button type="button" class="settings-nav-item" data-settings="语音设置">语音设置</button>
+            <button type="button" class="settings-nav-item" data-settings="用户反馈">用户反馈</button>
+          </nav>
+        </aside>
+
+        <div class="settings-content">
+
+          <!-- 个人资料 -->
+          <section class="settings-panel" id="settings-panel-个人资料">
+            <h2 class="settings-panel-title">个人资料</h2>
+            <form class="settings-profile-form" id="settings-profile-form">
+              <div class="settings-field settings-field-avatar">
+                <span class="settings-label">头像</span>
+                <div class="settings-avatar-row">
+                  <img src="image/a2b7cecbe8f8698b401d12c33eb41788ae4faa21.png" alt="头像" class="settings-avatar" id="settings-avatar">
+                  <button type="button" class="settings-link-btn" id="btn-change-avatar">更改</button>
+                </div>
+              </div>
+              <div class="settings-field">
+                <span class="settings-label">用户ID</span>
+                <div class="settings-input-wrap settings-input-readonly">
+                  <span id="settings-user-id">114514</span>
+                </div>
+              </div>
+              <div class="settings-field">
+                <span class="settings-label">用户昵称</span>
+                <div class="settings-input-wrap">
+                  <input type="text" class="settings-input" id="settings-nickname" maxlength="20" value="机宝">
+                </div>
+              </div>
+              <div class="settings-field">
+                <span class="settings-label">性别</span>
+                <div class="settings-gender-group" id="settings-gender-group">
+                  <label class="settings-gender-option">
+                    <input type="radio" name="gender" value="男" checked>
+                    <span class="settings-radio"></span>
+                    <span>男</span>
+                  </label>
+                  <label class="settings-gender-option">
+                    <input type="radio" name="gender" value="女">
+                    <span class="settings-radio"></span>
+                    <span>女</span>
+                  </label>
+                  <label class="settings-gender-option">
+                    <input type="radio" name="gender" value="保密">
+                    <span class="settings-radio"></span>
+                    <span>保密</span>
+                  </label>
+                </div>
+              </div>
+              <div class="settings-field">
+                <span class="settings-label">生日</span>
+                <div class="settings-input-wrap settings-input-date">
+                  <input type="date" class="settings-input" id="settings-birthday" value="2013-03-09">
+                </div>
+              </div>
+              <div class="settings-form-actions">
+                <button type="submit" class="settings-btn-primary" id="btn-save-profile">保存资料</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- 快捷键设置 -->
+          <section class="settings-panel hidden" id="settings-panel-快捷键设置">
+            <h2 class="settings-panel-title">快捷键设置</h2>
+            <div class="settings-shortcut-list">
+              <div class="settings-shortcut-item">
+                <div class="settings-shortcut-head">
+                  <span class="settings-shortcut-name">开始/发送录音</span>
+                  <kbd class="settings-shortcut-key">ALT+X</kbd>
+                </div>
+                <p class="settings-shortcut-desc">语音通话未开启时：按下快捷开始录音，再次按下发送录音</p>
+                <p class="settings-shortcut-desc">语音通话开启时：伙伴正在听时按下发送录音，伙伴正在说时按下开始录音(会打断伙伴的语音)</p>
+              </div>
+              <div class="settings-shortcut-item">
+                <div class="settings-shortcut-head">
+                  <span class="settings-shortcut-name">打开/关闭语音通话麦克风</span>
+                  <kbd class="settings-shortcut-key">ALT+C</kbd>
+                </div>
+                <p class="settings-shortcut-desc">语音通话模式下，快速打开或关闭麦克风</p>
+              </div>
+              <div class="settings-shortcut-item">
+                <div class="settings-shortcut-head">
+                  <span class="settings-shortcut-name">打开/关闭文字对话面板</span>
+                  <kbd class="settings-shortcut-key">ALT+T</kbd>
+                </div>
+                <p class="settings-shortcut-desc">快速打开或关闭文字对话面板</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 通用设置 -->
+          <section class="settings-panel hidden" id="settings-panel-通用设置">
+            <h2 class="settings-panel-title">通用设置</h2>
+            <div class="settings-option-list">
+              <div class="settings-option-row">
+                <span class="settings-option-label">开机自启动</span>
+                <label class="permission-toggle">
+                  <input type="checkbox" id="setting-auto-launch">
+                  <span class="toggle-track"><span class="toggle-knob"></span></span>
+                </label>
+              </div>
+              <div class="settings-divider"></div>
+              <div class="settings-option-row settings-option-row-stack">
+                <div class="settings-option-head">
+                  <span class="settings-option-label">游戏内主动对话频率</span>
+                  <label class="permission-toggle">
+                    <input type="checkbox" id="setting-dialogue-enabled">
+                    <span class="toggle-track"><span class="toggle-knob"></span></span>
+                  </label>
+                </div>
+                <p class="settings-option-desc">到达设定的时间间隔后，伙伴会根据游戏画面向用户发起主动对话</p>
+                <div class="settings-frequency" id="settings-frequency-wrap">
+                  <span class="settings-frequency-label">当前频率</span>
+                  <input type="range" class="settings-range" id="setting-dialogue-frequency" min="1" max="3" step="1" value="3">
+                  <span class="settings-frequency-value" id="setting-frequency-text">较高</span>
+                </div>
+              </div>
+              <div class="settings-divider"></div>
+              <div class="settings-option-row settings-option-row-stack">
+                <div class="settings-option-head">
+                  <span class="settings-option-label">自动打断</span>
+                  <label class="permission-toggle">
+                    <input type="checkbox" id="setting-auto-interrupt">
+                    <span class="toggle-track"><span class="toggle-knob"></span></span>
+                  </label>
+                </div>
+                <p class="settings-option-desc">开启后在语音通话模式下，用户说的话可以打断伙伴正在进行的思考和回复</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 画面识别权限 -->
+          <section class="settings-panel hidden" id="settings-panel-画面识别权限">
+            <h2 class="settings-panel-title">画面识别权限</h2>
+            <p class="settings-panel-desc">打开后，伙伴能够看到你的游玩界面</p>
+            <div class="settings-option-row settings-screen-master">
+              <span class="settings-option-label">启用画面识别</span>
+              <label class="permission-toggle">
+                <input type="checkbox" id="setting-screen-enabled" checked>
+                <span class="toggle-track"><span class="toggle-knob"></span></span>
+              </label>
+            </div>
+            <div class="settings-permissions-header">
+              <span class="settings-permissions-label">已授权窗口</span>
+              <button type="button" class="btn-add-permission settings-add-perm" id="btn-add-permission-settings" title="添加权限">
+                <img src="image/icon1.png" alt="+">
+              </button>
+            </div>
+            <ul class="settings-permission-list" id="settings-permission-list"></ul>
+          </section>
+
+          <!-- 语音设置 -->
+          <section class="settings-panel hidden" id="settings-panel-语音设置">
+            <h2 class="settings-panel-title">语音设置</h2>
+            <div class="settings-voice-grid">
+              <div class="settings-field settings-field-inline">
+                <span class="settings-label">伙伴输出语言</span>
+                <div class="settings-select-wrap">
+                  <select class="settings-select" id="setting-voice-language">
+                    <option value="中文" selected>中文</option>
+                    <option value="English">English</option>
+                    <option value="日本語">日本語</option>
+                  </select>
+                </div>
+              </div>
+              <div class="settings-field settings-field-inline">
+                <span class="settings-label">音量</span>
+                <div class="settings-volume-row">
+                  <input type="range" class="settings-range settings-volume-range" id="setting-voice-volume" min="0" max="100" step="1" value="100">
+                  <span class="settings-volume-value" id="setting-volume-text">100</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 用户反馈 -->
+          <section class="settings-panel hidden" id="settings-panel-用户反馈">
+            <h2 class="settings-panel-title">用户反馈</h2>
+            <div class="settings-feedback">
+              <label class="settings-feedback-label" for="settings-feedback-text">反馈信息</label>
+              <div class="settings-feedback-box">
+                <textarea class="settings-feedback-textarea" id="settings-feedback-text" maxlength="800" placeholder="请输入反馈信息"></textarea>
+                <div class="settings-feedback-footer">
+                  <button type="button" class="settings-feedback-add-img" id="btn-feedback-image" title="添加图片">
+                    <span class="settings-add-icon">+</span>
+                    <span>添加图片</span>
+                  </button>
+                  <span class="settings-feedback-count" id="settings-feedback-count">0/800</span>
+                </div>
+              </div>
+              <button type="button" class="settings-btn-primary settings-feedback-submit" id="btn-submit-feedback">提交反馈</button>
+            </div>
+          </section>
+
+        </div>
       </div>
     </main>
   </div>

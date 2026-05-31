@@ -49,6 +49,187 @@ let screenPermissions = [
 let modalState = null;
 let pendingDeleteId = null;
 
+// ====== Settings State ======
+const SETTINGS_STORAGE_KEY = 'companion-ui-settings';
+const FREQUENCY_LABELS = { 1: '较低', 2: '中等', 3: '较高' };
+
+let activeSettingsSubtab = '个人资料';
+
+let userProfile = {
+  userId: '114514',
+  nickname: '机宝',
+  gender: '男',
+  birthday: '2013-03-09',
+  avatar: 'image/a2b7cecbe8f8698b401d12c33eb41788ae4faa21.png',
+};
+
+let generalSettings = {
+  autoLaunch: false,
+  dialogueEnabled: true,
+  dialogueFrequency: 3,
+  autoInterrupt: false,
+  screenRecognitionEnabled: true,
+};
+
+let voiceSettings = {
+  language: '中文',
+  volume: 100,
+};
+
+function loadSettingsFromStorage() {
+  try {
+    const raw = localStorage.getItem(SETTINGS_STORAGE_KEY);
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    if (data.userProfile) userProfile = { ...userProfile, ...data.userProfile };
+    if (data.generalSettings) generalSettings = { ...generalSettings, ...data.generalSettings };
+    if (data.voiceSettings) voiceSettings = { ...voiceSettings, ...data.voiceSettings };
+    if (data.activeSettingsSubtab) activeSettingsSubtab = data.activeSettingsSubtab;
+  } catch (_) { /* ignore corrupt storage */ }
+}
+
+function saveSettingsToStorage() {
+  try {
+    localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify({
+      userProfile,
+      generalSettings,
+      voiceSettings,
+      activeSettingsSubtab,
+    }));
+  } catch (_) { /* ignore quota errors */ }
+}
+
+function applyProfileToUI() {
+  const avatarEl = document.getElementById('settings-avatar');
+  const userIdEl = document.getElementById('settings-user-id');
+  const nicknameEl = document.getElementById('settings-nickname');
+  const birthdayEl = document.getElementById('settings-birthday');
+  const companionNameEl = document.getElementById('companion-name');
+
+  if (avatarEl) avatarEl.src = userProfile.avatar;
+  if (userIdEl) userIdEl.textContent = userProfile.userId;
+  if (nicknameEl) nicknameEl.value = userProfile.nickname;
+  if (birthdayEl) birthdayEl.value = userProfile.birthday;
+  if (companionNameEl) companionNameEl.textContent = userProfile.nickname;
+
+  document.querySelectorAll('#settings-gender-group input[name="gender"]').forEach(input => {
+    input.checked = input.value === userProfile.gender;
+  });
+}
+
+function applyGeneralSettingsToUI() {
+  const autoLaunch = document.getElementById('setting-auto-launch');
+  const dialogueEnabled = document.getElementById('setting-dialogue-enabled');
+  const dialogueFrequency = document.getElementById('setting-dialogue-frequency');
+  const autoInterrupt = document.getElementById('setting-auto-interrupt');
+  const screenEnabled = document.getElementById('setting-screen-enabled');
+
+  if (autoLaunch) autoLaunch.checked = generalSettings.autoLaunch;
+  if (dialogueEnabled) dialogueEnabled.checked = generalSettings.dialogueEnabled;
+  if (dialogueFrequency) dialogueFrequency.value = String(generalSettings.dialogueFrequency);
+  if (autoInterrupt) autoInterrupt.checked = generalSettings.autoInterrupt;
+  if (screenEnabled) screenEnabled.checked = generalSettings.screenRecognitionEnabled;
+
+  updateDialogueFrequencyUI();
+}
+
+function applyVoiceSettingsToUI() {
+  const languageEl = document.getElementById('setting-voice-language');
+  const volumeEl = document.getElementById('setting-voice-volume');
+  const volumeText = document.getElementById('setting-volume-text');
+
+  if (languageEl) languageEl.value = voiceSettings.language;
+  if (volumeEl) volumeEl.value = String(voiceSettings.volume);
+  if (volumeText) volumeText.textContent = String(voiceSettings.volume);
+}
+
+function updateDialogueFrequencyUI() {
+  const enabled = document.getElementById('setting-dialogue-enabled');
+  const wrap = document.getElementById('settings-frequency-wrap');
+  const slider = document.getElementById('setting-dialogue-frequency');
+  const text = document.getElementById('setting-frequency-text');
+
+  const isOn = enabled?.checked ?? generalSettings.dialogueEnabled;
+  if (wrap) wrap.classList.toggle('is-active', isOn);
+  if (slider && text) {
+    const val = Number(slider.value) || generalSettings.dialogueFrequency;
+    text.textContent = FREQUENCY_LABELS[val] || '较高';
+  }
+}
+
+function setSettingsSubtab(subtabName) {
+  activeSettingsSubtab = subtabName;
+
+  document.querySelectorAll('.settings-nav-item').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.settings === subtabName);
+  });
+
+  document.querySelectorAll('.settings-panel').forEach(panel => {
+    panel.classList.toggle('hidden', panel.id !== `settings-panel-${subtabName}`);
+  });
+
+  saveSettingsToStorage();
+  Bus.emit('settings:subtab-change', subtabName);
+}
+
+function saveUserProfile() {
+  const nicknameEl = document.getElementById('settings-nickname');
+  const birthdayEl = document.getElementById('settings-birthday');
+  const genderInput = document.querySelector('#settings-gender-group input[name="gender"]:checked');
+
+  userProfile = {
+    ...userProfile,
+    nickname: nicknameEl?.value?.trim() || userProfile.nickname,
+    birthday: birthdayEl?.value || userProfile.birthday,
+    gender: genderInput?.value || userProfile.gender,
+  };
+
+  applyProfileToUI();
+  saveSettingsToStorage();
+  showToast('success', '个人资料已保存');
+  Bus.emit('settings:profile-save', { ...userProfile });
+}
+
+function bindPermissionListEvents(container) {
+  if (!container) return;
+
+  container.querySelectorAll('[data-toggle]').forEach(input => {
+    input.addEventListener('change', (e) => {
+      e.stopPropagation();
+      togglePermission(e.target.dataset.toggle, e.target.checked);
+    });
+  });
+
+  container.querySelectorAll('[data-delete]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      pendingDeleteId = btn.dataset.delete;
+      openModal('confirm-delete');
+    });
+  });
+}
+
+function buildPermissionListHTML() {
+  return screenPermissions
+    .map((perm) => `
+      <li class="permission-item" data-perm-id="${perm.id}">
+        <div class="permission-item-icon">
+          <img src="${perm.iconImg}" alt="${perm.app}">
+        </div>
+        <span class="permission-item-text">${escapeHtml(perm.windowName)}</span>
+        <button class="permission-btn-delete" data-delete="${perm.id}" title="删除">
+          <img src="${perm.deleteIcon}" alt="删除">
+        </button>
+        <label class="permission-toggle">
+          <input type="checkbox" ${perm.enabled ? 'checked' : ''} data-toggle="${perm.id}">
+          <span class="toggle-track">
+            <span class="toggle-knob"></span>
+          </span>
+        </label>
+      </li>
+    `).join('');
+}
+
 // ====== Event Bus ======
 const Bus = {
   _listeners: {},
@@ -285,44 +466,19 @@ function renderGameGrid() {
 }
 
 function renderPermissionList() {
-  const container = document.getElementById('permission-list');
-  if (!container) return;
+  const homeList = document.getElementById('permission-list');
+  const settingsList = document.getElementById('settings-permission-list');
+  const html = buildPermissionListHTML();
 
-  container.innerHTML = screenPermissions
-    .map((perm) => `
-      <li class="permission-item" data-perm-id="${perm.id}">
-        <div class="permission-item-icon">
-          <img src="${perm.iconImg}" alt="${perm.app}">
-        </div>
-        <span class="permission-item-text">${escapeHtml(perm.windowName)}</span>
-        <button class="permission-btn-delete" data-delete="${perm.id}" title="删除">
-          <img src="${perm.deleteIcon}" alt="删除">
-        </button>
-        <label class="permission-toggle">
-          <input type="checkbox" ${perm.enabled ? 'checked' : ''} data-toggle="${perm.id}">
-          <span class="toggle-track">
-            <span class="toggle-knob"></span>
-          </span>
-        </label>
-      </li>
-    `).join('');
+  if (homeList) {
+    homeList.innerHTML = html;
+    bindPermissionListEvents(homeList);
+  }
 
-  // Toggle events
-  container.querySelectorAll('[data-toggle]').forEach(input => {
-    input.addEventListener('change', (e) => {
-      e.stopPropagation();
-      togglePermission(e.target.dataset.toggle, e.target.checked);
-    });
-  });
-
-  // Delete button events
-  container.querySelectorAll('[data-delete]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      pendingDeleteId = btn.dataset.delete;
-      openModal('confirm-delete');
-    });
-  });
+  if (settingsList) {
+    settingsList.innerHTML = html;
+    bindPermissionListEvents(settingsList);
+  }
 }
 
 // ====== Utilities ======
@@ -377,11 +533,113 @@ function doLogin() {
   }
 }
 
+function initSettings() {
+  applyProfileToUI();
+  applyGeneralSettingsToUI();
+  applyVoiceSettingsToUI();
+  setSettingsSubtab(activeSettingsSubtab);
+
+  document.querySelectorAll('.settings-nav-item').forEach(btn => {
+    btn.addEventListener('click', () => setSettingsSubtab(btn.dataset.settings));
+  });
+
+  document.getElementById('settings-profile-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    saveUserProfile();
+  });
+
+  document.getElementById('btn-change-avatar')?.addEventListener('click', () => {
+    showToast('info', '头像更换功能即将接入文件选择器');
+    Bus.emit('settings:avatar-change');
+  });
+
+  document.getElementById('setting-auto-launch')?.addEventListener('change', (e) => {
+    generalSettings.autoLaunch = e.target.checked;
+    saveSettingsToStorage();
+    Bus.emit('settings:general-change', { ...generalSettings });
+    showToast('info', `开机自启动已${e.target.checked ? '开启' : '关闭'}`);
+  });
+
+  document.getElementById('setting-dialogue-enabled')?.addEventListener('change', (e) => {
+    generalSettings.dialogueEnabled = e.target.checked;
+    updateDialogueFrequencyUI();
+    saveSettingsToStorage();
+    Bus.emit('settings:general-change', { ...generalSettings });
+  });
+
+  document.getElementById('setting-dialogue-frequency')?.addEventListener('input', (e) => {
+    generalSettings.dialogueFrequency = Number(e.target.value);
+    updateDialogueFrequencyUI();
+    saveSettingsToStorage();
+    Bus.emit('settings:general-change', { ...generalSettings });
+  });
+
+  document.getElementById('setting-auto-interrupt')?.addEventListener('change', (e) => {
+    generalSettings.autoInterrupt = e.target.checked;
+    saveSettingsToStorage();
+    Bus.emit('settings:general-change', { ...generalSettings });
+    showToast('info', `自动打断已${e.target.checked ? '开启' : '关闭'}`);
+  });
+
+  document.getElementById('setting-screen-enabled')?.addEventListener('change', (e) => {
+    generalSettings.screenRecognitionEnabled = e.target.checked;
+    saveSettingsToStorage();
+    Bus.emit('settings:general-change', { ...generalSettings });
+    showToast('info', `画面识别已${e.target.checked ? '启用' : '禁用'}`);
+  });
+
+  document.getElementById('setting-voice-language')?.addEventListener('change', (e) => {
+    voiceSettings.language = e.target.value;
+    saveSettingsToStorage();
+    Bus.emit('settings:voice-change', { ...voiceSettings });
+  });
+
+  document.getElementById('setting-voice-volume')?.addEventListener('input', (e) => {
+    voiceSettings.volume = Number(e.target.value);
+    const text = document.getElementById('setting-volume-text');
+    if (text) text.textContent = String(voiceSettings.volume);
+    saveSettingsToStorage();
+    Bus.emit('settings:voice-change', { ...voiceSettings });
+  });
+
+  document.getElementById('btn-add-permission-settings')?.addEventListener('click', () => {
+    openModal('add-permission');
+  });
+
+  const feedbackText = document.getElementById('settings-feedback-text');
+  const feedbackCount = document.getElementById('settings-feedback-count');
+
+  feedbackText?.addEventListener('input', () => {
+    if (feedbackCount) {
+      feedbackCount.textContent = `${feedbackText.value.length}/800`;
+    }
+  });
+
+  document.getElementById('btn-feedback-image')?.addEventListener('click', () => {
+    showToast('info', '图片上传功能即将开放');
+    Bus.emit('settings:feedback-image');
+  });
+
+  document.getElementById('btn-submit-feedback')?.addEventListener('click', () => {
+    const text = feedbackText?.value?.trim() || '';
+    if (!text) {
+      showToast('info', '请先填写反馈内容');
+      return;
+    }
+    showToast('success', '反馈已提交，感谢你的建议！');
+    if (feedbackText) feedbackText.value = '';
+    if (feedbackCount) feedbackCount.textContent = '0/800';
+    Bus.emit('settings:feedback-submit', { text });
+  });
+}
+
 // ====== Init ======
 function init() {
+  loadSettingsFromStorage();
   renderRecentGames();
   renderGameGrid();
   renderPermissionList();
+  initSettings();
 
   // --- Login screen ---
   const btnLogin = document.getElementById('btn-login');
@@ -528,6 +786,10 @@ window.CompanionUI = {
   getState: () => ({
     activeTab,
     activeSubtab,
+    activeSettingsSubtab,
+    userProfile: { ...userProfile },
+    generalSettings: { ...generalSettings },
+    voiceSettings: { ...voiceSettings },
     gameLibrary: [...gameLibrary],
     screenPermissions: [...screenPermissions],
     modalState,
@@ -536,6 +798,8 @@ window.CompanionUI = {
   off: Bus.off.bind(Bus),
   setTab: setActiveTab,
   setSubtab: setActiveSubtab,
+  setSettingsSubtab,
+  saveUserProfile,
   doLogin,
   showToast,
   openModal,
