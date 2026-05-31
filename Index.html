@@ -61,6 +61,9 @@
         <button class="nav-tab" data-tab="设置">
           <span>设置</span>
         </button>
+        <button class="nav-tab" data-tab="商城">
+          <span>商城</span>
+        </button>
       </div>
       <div class="window-controls">
         <img src="image/icon0.png" class="ctrl-icon ctrl-minimize" alt="最小化" title="最小化">
@@ -376,6 +379,29 @@
         </div>
       </div>
     </main>
+
+    <!-- ====== Tab: 商城 ====== -->
+    <main class="tab-content tab-shop hidden" id="tab-商城">
+      <div class="shop-layout">
+        <!-- Left sidebar: categories -->
+        <aside class="shop-sidebar">
+          <nav class="shop-nav" id="shop-nav">
+            <button type="button" class="shop-nav-item active" data-shop-cat="推荐">推荐</button>
+            <button type="button" class="shop-nav-item" data-shop-cat="装扮">装扮</button>
+            <button type="button" class="shop-nav-item" data-shop-cat="道具">道具</button>
+            <button type="button" class="shop-nav-item" data-shop-cat="语音">语音</button>
+            <button type="button" class="shop-nav-item" data-shop-cat="特效">特效</button>
+          </nav>
+        </aside>
+
+        <!-- Right content: item grid -->
+        <div class="shop-content">
+          <div class="shop-grid" id="shop-grid">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 
   <!-- ====== Toast Container ====== -->
@@ -453,6 +479,50 @@
       <div class="modal-footer">
         <button class="btn btn-cancel" data-close>取消</button>
         <button class="btn btn-primary" id="btn-confirm-add">添加</button>
+      </div>
+    </div>
+
+    <!-- Shop Purchase Detail -->
+    <div class="modal modal-shop-detail hidden" id="modal-shop-detail">
+      <div class="modal-header">
+        <h3 id="shop-detail-title">商品名称</h3>
+        <button class="modal-close" data-close>&times;</button>
+      </div>
+      <div class="modal-body shop-detail-body">
+        <div class="shop-detail-thumb">
+          <img id="shop-detail-thumb" src="" alt="">
+        </div>
+        <div class="shop-detail-info">
+          <p class="shop-detail-desc" id="shop-detail-desc"></p>
+          <div class="shop-detail-price-row">
+            <span class="shop-detail-label">价格</span>
+            <span class="shop-detail-price" id="shop-detail-price"></span>
+          </div>
+          <p class="shop-detail-confirm-text">确定要购买此商品吗？</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-cancel" data-close>取消</button>
+        <button class="btn btn-primary" id="btn-confirm-purchase">确认购买</button>
+      </div>
+    </div>
+
+    <!-- Chat / Suggestion Modal -->
+    <div class="modal modal-chat hidden" id="modal-chat">
+      <div class="modal-header">
+        <h3>💬 伙伴对话</h3>
+        <button class="modal-close" data-close>&times;</button>
+      </div>
+      <div class="modal-body chat-body">
+        <!-- History -->
+        <div class="chat-history" id="chat-history">
+          <p class="chat-empty">暂无历史记录，输入内容开始对话吧~</p>
+        </div>
+        <!-- Input area -->
+        <div class="chat-input-row">
+          <input type="text" class="chat-input" id="chat-input" placeholder="输入想对伙伴说的话..." maxlength="200">
+          <button class="chat-send-btn" id="btn-chat-send">发送</button>
+        </div>
       </div>
     </div>
   </div>

@@ -27,6 +27,31 @@ let gameLibrary = [
 
 let selectedGameDetail = null;
 
+// ====== Shop Data ======
+let activeShopCat = '推荐';
+let selectedShopItem = null;
+
+// ====== Chat State ======
+let chatHistory = [];
+
+const shopItems = [
+  { id: 's1',  cat: '推荐', name: '夏日限定皮肤',   desc: '清凉夏日主题伙伴外观',       price: 128, thumb: 'image/item1.png' },
+  { id: 's2',  cat: '推荐', name: '樱花装扮',       desc: '浪漫樱花季限定装扮',         price: 98,  thumb: 'image/item1.png' },
+  { id: 's3',  cat: '推荐', name: '经验加成卡',     desc: '游戏经验获取+50%，持续1小时', price: 30,  thumb: 'image/item1.png' },
+  { id: 's4',  cat: '装扮', name: '暗夜骑士套装',   desc: '酷炫暗黑风格角色外观',       price: 168, thumb: 'image/item1.png' },
+  { id: 's5',  cat: '装扮', name: '学院风制服',     desc: '青春校园风格角色装扮',       price: 88,  thumb: 'image/item1.png' },
+  { id: 's6',  cat: '装扮', name: '赛博朋克皮肤',   desc: '未来科技感霓虹外观',         price: 198, thumb: 'image/item1.png' },
+  { id: 's7',  cat: '道具', name: '双倍金币卡',     desc: '游戏中金币获取翻倍',         price: 50,  thumb: 'image/item1.png' },
+  { id: 's8',  cat: '道具', name: '体力恢复剂',     desc: '立即恢复全部体力值',         price: 20,  thumb: 'image/item1.png' },
+  { id: 's9',  cat: '道具', name: '稀有掉落增幅器', desc: '稀有道具掉落率+30%',          price: 60,  thumb: 'image/item1.png' },
+  { id: 's10', cat: '语音', name: '傲娇语音包',     desc: '傲娇风格伙伴语音替换',       price: 68,  thumb: 'image/item1.png' },
+  { id: 's11', cat: '语音', name: '温柔语音包',     desc: '温柔大姐姐风格语音替换',     price: 68,  thumb: 'image/item1.png' },
+  { id: 's12', cat: '语音', name: '热血语音包',     desc: '热血少年风格语音替换',       price: 68,  thumb: 'image/item1.png' },
+  { id: 's13', cat: '特效', name: '星光入场特效',   desc: '伙伴登场时星光闪烁效果',     price: 88,  thumb: 'image/item1.png' },
+  { id: 's14', cat: '特效', name: '火焰拖尾特效',   desc: '移动时留下火焰轨迹',         price: 108, thumb: 'image/item1.png' },
+  { id: 's15', cat: '特效', name: '彩虹粒子特效',   desc: '周身环绕彩虹色粒子',         price: 78,  thumb: 'image/item1.png' },
+];
+
 let screenPermissions = [
   {
     id: 'perm-1',
@@ -348,6 +373,12 @@ function setActiveSubtab(subtabName) {
     panel.classList.toggle('hidden', panel.id !== `subtab-${subtabName}`);
   });
 
+  // Hide hero image when 工坊 is active
+  const hero = document.querySelector('.companion-hero');
+  if (hero) {
+    hero.style.display = subtabName === '工坊' ? 'none' : '';
+  }
+
   Bus.emit('subtab:change', subtabName);
 }
 
@@ -481,6 +512,158 @@ function renderPermissionList() {
   }
 }
 
+// ====== Shop ======
+function renderShopGrid() {
+  const container = document.getElementById('shop-grid');
+  if (!container) return;
+
+  const items = activeShopCat === '推荐'
+    ? shopItems.filter(item => item.cat === '推荐')
+    : shopItems.filter(item => item.cat === activeShopCat);
+
+  container.innerHTML = items
+    .map(item => `
+      <div class="shop-item" data-shop-id="${item.id}">
+        <img class="shop-item-thumb" src="${item.thumb}" alt="${item.name}">
+        <div class="shop-item-body">
+          <div class="shop-item-name">${escapeHtml(item.name)}</div>
+          <div class="shop-item-desc">${escapeHtml(item.desc)}</div>
+          <div class="shop-item-footer">
+            <span class="shop-item-price">💰 ${item.price}</span>
+            <button class="shop-item-btn" data-buy="${item.id}">购买</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+  // Bind buy button clicks → open detail modal
+  container.querySelectorAll('[data-buy]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const item = shopItems.find(s => s.id === btn.dataset.buy);
+      if (item) {
+        openShopDetail(item);
+      }
+    });
+  });
+
+  // Bind card clicks
+  container.querySelectorAll('.shop-item').forEach(card => {
+    card.addEventListener('click', () => {
+      const item = shopItems.find(s => s.id === card.dataset.shopId);
+      if (item) {
+        showToast('info', `查看商品：「${item.name}」`);
+        Bus.emit('shop:detail', item);
+      }
+    });
+  });
+}
+
+function setShopCategory(catName) {
+  activeShopCat = catName;
+
+  document.querySelectorAll('.shop-nav-item').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.shopCat === catName);
+  });
+
+  renderShopGrid();
+  Bus.emit('shop:cat-change', catName);
+}
+
+function openShopDetail(item) {
+  selectedShopItem = item;
+
+  document.getElementById('shop-detail-title').textContent = item.name;
+  document.getElementById('shop-detail-thumb').src = item.thumb;
+  document.getElementById('shop-detail-thumb').alt = item.name;
+  document.getElementById('shop-detail-desc').textContent = item.desc;
+  document.getElementById('shop-detail-price').textContent = `💰 ${item.price}`;
+
+  openModal('shop-detail');
+  Bus.emit('shop:detail-open', item);
+}
+
+function confirmPurchase() {
+  if (!selectedShopItem) return;
+  const item = selectedShopItem;
+  showToast('success', `已购买「${item.name}」— 花费 ${item.price} 💰`);
+  Bus.emit('shop:buy', item);
+  closeModal();
+  selectedShopItem = null;
+}
+
+// ====== Chat / Suggestion ======
+function getNowString() {
+  const d = new Date();
+  const pad = n => String(n).padStart(2, '0');
+  return `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+}
+
+function renderChatHistory() {
+  const container = document.getElementById('chat-history');
+  if (!container) return;
+
+  if (chatHistory.length === 0) {
+    container.innerHTML = '<p class="chat-empty">暂无历史记录，输入内容开始对话吧~</p>';
+    return;
+  }
+
+  container.innerHTML = chatHistory
+    .slice()
+    .reverse()
+    .map(msg => `
+      <div class="chat-msg">
+        <div class="chat-msg-meta">
+          <span>${escapeHtml(msg.sender)}</span>
+          <span>${escapeHtml(msg.time)}</span>
+        </div>
+        <div class="chat-msg-text">${escapeHtml(msg.text)}</div>
+      </div>
+    `).join('');
+}
+
+function sendChatMessage() {
+  const input = document.getElementById('chat-input');
+  const text = input?.value?.trim();
+  if (!text) return;
+
+  chatHistory.push({
+    sender: '我',
+    text: text,
+    time: getNowString(),
+  });
+
+  // Auto reply after a short delay
+  setTimeout(() => {
+    const replies = [
+      '好的，我记住了！',
+      '听起来不错呢~',
+      '嗯嗯，我理解你的意思~',
+      '哈哈，说得对！',
+      '让我想想...好像有点道理！',
+      '你真有趣！要不要一起玩游戏？',
+    ];
+    chatHistory.push({
+      sender: '杂鱼酱',
+      text: replies[Math.floor(Math.random() * replies.length)],
+      time: getNowString(),
+    });
+    renderChatHistory();
+    Bus.emit('chat:reply');
+  }, 600);
+
+  input.value = '';
+  renderChatHistory();
+  Bus.emit('chat:send', text);
+}
+
+function openChatModal() {
+  renderChatHistory();
+  openModal('chat');
+  document.getElementById('chat-input')?.focus();
+  Bus.emit('chat:open');
+}
+
 // ====== Utilities ======
 function escapeHtml(str) {
   const div = document.createElement('div');
@@ -541,6 +724,11 @@ function initSettings() {
 
   document.querySelectorAll('.settings-nav-item').forEach(btn => {
     btn.addEventListener('click', () => setSettingsSubtab(btn.dataset.settings));
+  });
+
+  // Shop category navigation
+  document.querySelectorAll('.shop-nav-item').forEach(btn => {
+    btn.addEventListener('click', () => setShopCategory(btn.dataset.shopCat));
   });
 
   document.getElementById('settings-profile-form')?.addEventListener('submit', (e) => {
@@ -638,6 +826,7 @@ function init() {
   loadSettingsFromStorage();
   renderRecentGames();
   renderGameGrid();
+  renderShopGrid();
   renderPermissionList();
   initSettings();
 
@@ -719,6 +908,21 @@ function init() {
     closeModal();
   });
 
+  // Modal: confirm purchase
+  document.getElementById('btn-confirm-purchase')?.addEventListener('click', () => {
+    confirmPurchase();
+  });
+
+  // Chat send button
+  document.getElementById('btn-chat-send')?.addEventListener('click', () => {
+    sendChatMessage();
+  });
+
+  // Chat input Enter key
+  document.getElementById('chat-input')?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') sendChatMessage();
+  });
+
   // Modal close buttons
   document.querySelectorAll('[data-close]').forEach(el => {
     el.addEventListener('click', closeModal);
@@ -736,7 +940,7 @@ function init() {
 
   // Suggestion box click
   document.querySelector('.suggestion-box')?.addEventListener('click', () => {
-    cycleSuggestion();
+    openChatModal();
     Bus.emit('companion:interact');
   });
 
@@ -786,7 +990,7 @@ function init() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
     if (e.ctrlKey || e.metaKey) {
-      const map = { '1': '首页', '2': '伙伴', '3': '游戏', '4': '设置' };
+      const map = { '1': '首页', '2': '伙伴', '3': '游戏', '4': '设置', '5': '商城' };
       if (map[e.key]) { e.preventDefault(); setActiveTab(map[e.key]); }
     }
   });
@@ -811,6 +1015,7 @@ window.CompanionUI = {
     generalSettings: { ...generalSettings },
     voiceSettings: { ...voiceSettings },
     gameLibrary: [...gameLibrary],
+    shopItems: [...shopItems],
     screenPermissions: [...screenPermissions],
     modalState,
   }),
@@ -819,6 +1024,7 @@ window.CompanionUI = {
   setTab: setActiveTab,
   setSubtab: setActiveSubtab,
   setSettingsSubtab,
+  setShopCategory,
   saveUserProfile,
   doLogin,
   showToast,
