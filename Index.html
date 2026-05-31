@@ -117,9 +117,9 @@
 
     <!-- ====== Tab: 伙伴 (from Frame351 reference) ====== -->
     <main class="tab-content tab-companion hidden" id="tab-伙伴">
-      <!-- Large character illustration -->
+      <!-- Left: p display image (switches on icon click) -->
       <div class="companion-hero">
-        <img src="image/73ce001741a5a7a69daa8baf12d4e11ff3640af2.png" alt="杂鱼酱 全身">
+        <img id="model-display-img" src="image/p1.png" alt="角色展示">
       </div>
 
       <!-- Right sidebar panel -->
@@ -134,10 +134,13 @@
           </button>
         </div>
 
-        <!-- Sub-tab: 模型 — gallery image -->
+        <!-- Sub-tab: 模型 — icon selectors below model tab -->
         <div class="companion-gallery subtab-panel" id="subtab-模型">
-          <img src="image/f46582d42aaf93295e8387079342d08a30c48ae4.png" alt="模型展示">
-          <div class="gallery-label">ver 1.0</div>
+          <!-- Icon selector row: i1 and i2 side by side, 3 per row -->
+          <div class="model-icon-row">
+            <img class="model-icon-sel active" src="image/i1.png" alt="选择角色1" data-char="1" data-pimg="image/p1.png">
+            <img class="model-icon-sel" src="image/i2.png" alt="选择角色2" data-char="2" data-pimg="image/p2.png">
+          </div>
         </div>
 
         <!-- Sub-tab: 工坊 — custom model upload (Frame 6_42) -->

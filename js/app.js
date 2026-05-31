@@ -751,6 +751,26 @@ function init() {
     btn.addEventListener('click', () => setActiveSubtab(btn.dataset.subtab));
   });
 
+  // 伙伴 tab: model icon selector clicks — switch left display image
+  const modelDisplayImg = document.getElementById('model-display-img');
+  document.querySelectorAll('.model-icon-sel').forEach(icon => {
+    icon.addEventListener('click', () => {
+      document.querySelectorAll('.model-icon-sel').forEach(i => i.classList.remove('active'));
+      icon.classList.add('active');
+      const pImg = icon.dataset.pimg;
+      if (modelDisplayImg && pImg) {
+        modelDisplayImg.style.opacity = '0';
+        setTimeout(() => {
+          modelDisplayImg.src = pImg;
+          modelDisplayImg.style.opacity = '1';
+        }, 200);
+      }
+      const charId = icon.dataset.char;
+      showToast('info', `已选择角色 ${charId}`);
+      Bus.emit('model:char-select', charId);
+    });
+  });
+
   // 伙伴 tab: workshop upload click
   document.querySelector('.workshop-upload-area')?.addEventListener('click', () => {
     showToast('info', '打开模型文件选择器...');
