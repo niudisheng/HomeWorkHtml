@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -193,6 +193,38 @@
       <div class="modal-footer">
         <button class="btn btn-cancel" data-close>取消</button>
         <button class="btn btn-danger" id="btn-confirm-delete">删除</button>
+      </div>
+    </div>
+
+    <!-- Game Detail (游戏 Tab 点击卡片) -->
+    <div class="modal modal-game-detail hidden" id="modal-game-detail">
+      <div class="modal-header">
+        <h3 id="game-detail-title">游戏名称</h3>
+        <button class="modal-close" data-close>&times;</button>
+      </div>
+      <div class="modal-body game-detail-body">
+        <div class="game-detail-poster">
+          <img id="game-detail-poster" src="" alt="">
+          <div class="game-detail-poster-stroke"></div>
+        </div>
+        <div class="game-detail-info">
+          <div class="game-detail-section">
+            <span class="game-detail-label">游戏类型</span>
+            <p class="game-detail-value" id="game-detail-genre">—</p>
+          </div>
+          <div class="game-detail-section">
+            <span class="game-detail-label">适宜人群</span>
+            <p class="game-detail-value" id="game-detail-audience">—</p>
+          </div>
+          <div class="game-detail-section game-detail-section-grow">
+            <span class="game-detail-label">游戏背景</span>
+            <p class="game-detail-value game-detail-desc" id="game-detail-desc">—</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-cancel" data-close>关闭</button>
+        <button class="btn btn-primary" id="btn-game-detail-launch">启动游戏</button>
       </div>
     </div>
 

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * AI Game Companion — UI Orchestrator
  * Pure frontend interaction layer. No game logic, no LLM.
  * Matches Pixso reference design.
@@ -6,18 +6,26 @@
 
 // ====== UI State ======
 let activeTab = '首页';
+const GAME_DETAIL_PLACEHOLDER = {
+  genre: '（游戏类型占位）',
+  audience: '（适宜人群占位）',
+  description: '（游戏背景介绍占位，可在此填写世界观、剧情梗概等内容。）',
+};
+
 let gameLibrary = [
-  { id: 'ori',           title: '奥日',               coverImg: 'image/b63ab57ba457a26a735a16a3bce3e3e646c6ff80.png', playIcon: 'image/Frame_38_48.png' },
-  { id: 'raft',          title: '木筏',               coverImg: 'image/cdff539179355961e0ece21f9b1945cdebd29ec9.png', playIcon: 'image/Frame_69_79.png' },
-  { id: 'split-fiction', title: '双影奇境',           coverImg: 'image/81988ef7482731b302b5ed3e726e9a5fd2f9bf22.png', playIcon: 'image/Frame_69_214.png' },
-  { id: 'isaac',         title: '以撒的结合：重生',   coverImg: 'image/77798c7721c5d450a7939c98f648b5425fb0c2b3.png', playIcon: 'image/Frame_69_93.png' },
-  { id: 'peak',          title: 'PEAK',               coverImg: 'image/589e8864195a32d230998b9504b0b23b21a91bf2.png', playIcon: 'image/Frame_69_130.png' },
-  { id: 'hollow-knight', title: '空洞骑士：丝之歌',   coverImg: 'image/59bf66d278807805bff42b28e480ddf7e58fb673.png', playIcon: 'image/Frame_69_178.png' },
-  { id: 'lost-castle-2', title: '失落城堡2',          coverImg: 'image/dc71d8a36ea2b6691b4d8803bd6cafc73127cac5.png', playIcon: 'image/Frame_69_246.png' },
-  { id: 'super-metroid', title: '超级银河战士',       coverImg: 'image/e8d3b04df38bbb2ac5d645f152e3a070d6c0cd08.png', playIcon: 'image/Frame_69_203.png' },
-  { id: 'dark-souls',    title: '黑暗之魂\n重制版',   coverImg: 'image/f7251ea0a4ee3d107dfe9dbcb011247c116f396c.png', playIcon: 'image/Frame_69_102.png' },
-  { id: 'zelda-mm',      title: '塞尔达传说：\n梅祖拉的假面', coverImg: 'image/330f6f93456ea49896c15a9733e3e9b3652045cb.png', playIcon: 'image/Frame_69_189.png' },
+  { id: 'ori',           title: '奥日',               coverImg: 'image/b63ab57ba457a26a735a16a3bce3e3e646c6ff80.png', playIcon: 'image/Frame_38_48.png', ...GAME_DETAIL_PLACEHOLDER },
+  { id: 'raft',          title: '木筏',               coverImg: 'image/cdff539179355961e0ece21f9b1945cdebd29ec9.png', playIcon: 'image/Frame_69_79.png', ...GAME_DETAIL_PLACEHOLDER },
+  { id: 'split-fiction', title: '双影奇境',           coverImg: 'image/81988ef7482731b302b5ed3e726e9a5fd2f9bf22.png', playIcon: 'image/Frame_69_214.png', ...GAME_DETAIL_PLACEHOLDER },
+  { id: 'isaac',         title: '以撒的结合：重生',   coverImg: 'image/77798c7721c5d450a7939c98f648b5425fb0c2b3.png', playIcon: 'image/Frame_69_93.png', ...GAME_DETAIL_PLACEHOLDER },
+  { id: 'peak',          title: 'PEAK',               coverImg: 'image/589e8864195a32d230998b9504b0b23b21a91bf2.png', playIcon: 'image/Frame_69_130.png', ...GAME_DETAIL_PLACEHOLDER },
+  { id: 'hollow-knight', title: '空洞骑士：丝之歌',   coverImg: 'image/59bf66d278807805bff42b28e480ddf7e58fb673.png', playIcon: 'image/Frame_69_178.png', ...GAME_DETAIL_PLACEHOLDER },
+  { id: 'lost-castle-2', title: '失落城堡2',          coverImg: 'image/dc71d8a36ea2b6691b4d8803bd6cafc73127cac5.png', playIcon: 'image/Frame_69_246.png', ...GAME_DETAIL_PLACEHOLDER },
+  { id: 'super-metroid', title: '超级银河战士',       coverImg: 'image/e8d3b04df38bbb2ac5d645f152e3a070d6c0cd08.png', playIcon: 'image/Frame_69_203.png', ...GAME_DETAIL_PLACEHOLDER },
+  { id: 'dark-souls',    title: '黑暗之魂\n重制版',   coverImg: 'image/f7251ea0a4ee3d107dfe9dbcb011247c116f396c.png', playIcon: 'image/Frame_69_102.png', ...GAME_DETAIL_PLACEHOLDER },
+  { id: 'zelda-mm',      title: '塞尔达传说：\n梅祖拉的假面', coverImg: 'image/330f6f93456ea49896c15a9733e3e9b3652045cb.png', playIcon: 'image/Frame_69_189.png', ...GAME_DETAIL_PLACEHOLDER },
 ];
+
+let selectedGameDetail = null;
 
 let screenPermissions = [
   {
@@ -85,7 +93,36 @@ function closeModal() {
   overlay.classList.add('hidden');
   modalState = null;
   pendingDeleteId = null;
+  selectedGameDetail = null;
   Bus.emit('modal:close');
+}
+
+function formatGameTitle(title) {
+  return title.replace(/\n/g, ' ');
+}
+
+function populateGameDetailModal(game) {
+  const titleEl = document.getElementById('game-detail-title');
+  const posterEl = document.getElementById('game-detail-poster');
+  const genreEl = document.getElementById('game-detail-genre');
+  const audienceEl = document.getElementById('game-detail-audience');
+  const descEl = document.getElementById('game-detail-desc');
+
+  if (titleEl) titleEl.textContent = formatGameTitle(game.title);
+  if (posterEl) {
+    posterEl.src = game.coverImg;
+    posterEl.alt = formatGameTitle(game.title);
+  }
+  if (genreEl) genreEl.textContent = game.genre || GAME_DETAIL_PLACEHOLDER.genre;
+  if (audienceEl) audienceEl.textContent = game.audience || GAME_DETAIL_PLACEHOLDER.audience;
+  if (descEl) descEl.textContent = game.description || GAME_DETAIL_PLACEHOLDER.description;
+}
+
+function openGameDetail(game) {
+  selectedGameDetail = game;
+  populateGameDetailModal(game);
+  openModal('game-detail');
+  Bus.emit('game:detail-open', game);
 }
 
 // ====== Tab Switching ======
@@ -222,14 +259,14 @@ function renderGameGrid() {
       </div>
     `}).join('');
 
-  // Bind card clicks
+  // Bind card clicks → game detail modal
   container.querySelectorAll('.game-card').forEach(card => {
     card.addEventListener('click', (e) => {
       if (e.target.closest('.game-card-launch')) return;
       const game = gameLibrary.find(g => g.id === card.dataset.gameId);
       if (game) {
         Bus.emit('game:select', game);
-        showToast('info', `选中 "${game.title.replace(/\n/g, ' ')}"`);
+        openGameDetail(game);
       }
     });
   });
@@ -405,6 +442,15 @@ function init() {
     closeModal();
   });
 
+  // Modal: game detail launch
+  document.getElementById('btn-game-detail-launch')?.addEventListener('click', () => {
+    if (selectedGameDetail) {
+      Bus.emit('game:launch', selectedGameDetail);
+      showToast('success', `正在启动 "${formatGameTitle(selectedGameDetail.title)}"`);
+      closeModal();
+    }
+  });
+
   // Modal: confirm add
   document.getElementById('btn-confirm-add')?.addEventListener('click', () => {
     const app = document.getElementById('select-app')?.value || 'bilibili';
@@ -494,6 +540,7 @@ window.CompanionUI = {
   showToast,
   openModal,
   closeModal,
+  openGameDetail,
 };
 
 // Boot

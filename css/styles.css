@@ -1,4 +1,4 @@
-/* ====== Design Tokens (from Pixso reference) ====== */
+﻿/* ====== Design Tokens (from Pixso reference) ====== */
 :root {
   /* Backgrounds */
   --bg-main:        #1D242C;
@@ -988,6 +988,123 @@ html, body {
 
 .btn-danger:hover {
   background: var(--danger-hover);
+}
+
+/* ====== Game Detail Modal ====== */
+.modal-game-detail {
+  width: 880px;
+  max-width: 92vw;
+}
+
+.game-detail-body {
+  display: flex;
+  gap: 28px;
+  padding: 20px 24px 24px;
+  align-items: stretch;
+  min-height: 360px;
+}
+
+.game-detail-poster {
+  flex-shrink: 0;
+  width: 280px;
+  height: 380px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-card);
+  background-color: var(--bg-card);
+}
+
+.game-detail-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.game-detail-poster-stroke {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+}
+
+.game-detail-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.game-detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.game-detail-section-grow {
+  flex: 1;
+  min-height: 0;
+}
+
+.game-detail-label {
+  font-size: 13px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--bg-nav-active);
+  letter-spacing: 0.02em;
+}
+
+.game-detail-value {
+  font-size: 15px;
+  font-family: var(--font-body);
+  color: var(--text-gray);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.game-detail-desc {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-dim);
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.game-detail-desc::-webkit-scrollbar {
+  width: 5px;
+}
+
+.game-detail-desc::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
+
+.modal-game-detail .modal-header h3 {
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .game-detail-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-detail-poster {
+    width: 200px;
+    height: 270px;
+  }
+
+  .game-detail-desc {
+    max-height: 140px;
+  }
 }
 
 /* ====== Tab Content Visibility ====== */
